@@ -11,11 +11,22 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
-
+    @IBOutlet var NameRoom: WKInterfaceLabel!
+    @IBOutlet var MedicalIssue: WKInterfaceLabel!
+    @IBOutlet var Data: WKInterfaceLabel!
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
+        NameRoom.setTextColor(UIColor.magenta)
+        NameRoom.setText("Smith - OR 1")
+        
+        MedicalIssue.setTextColor(UIColor.magenta)
+        MedicalIssue.setText("NBP")
+        
+        Data.setTextColor(UIColor.magenta)
+        Data.setText("100/60")
     }
     
     override func willActivate() {
@@ -27,5 +38,6 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
-
+    
+    
 }
