@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36DB392D24269355739E9DA2 /* Pods_MUSC_Anesthesia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5845A2D5A599582AB64438B9 /* Pods_MUSC_Anesthesia.framework */; };
+		3933482D812DC2CFD35EE2D8 /* Pods_MUSC_AnesthesiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5182FC1A30D5CDC3245B885C /* Pods_MUSC_AnesthesiaUITests.framework */; };
+		7FC01D8B1AB8E2C332C846D5 /* Pods_MUSC_Anesthesia_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79EAA8D42D4AB016ACA13CC /* Pods_MUSC_Anesthesia_WatchKit_Extension.framework */; };
+		8D135AD720E161840099DB48 /* readingCSV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D135AD520E161840099DB48 /* readingCSV.cpp */; };
 		8DE9803420D984B500CDA43E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9803320D984B500CDA43E /* AppDelegate.swift */; };
 		8DE9803620D984B500CDA43E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9803520D984B500CDA43E /* ViewController.swift */; };
 		8DE9803920D984B500CDA43E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE9803720D984B500CDA43E /* Main.storyboard */; };
@@ -22,6 +26,8 @@
 		8DE9806F20D984C000CDA43E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9806E20D984C000CDA43E /* ExtensionDelegate.swift */; };
 		8DE9807120D984C000CDA43E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9807020D984C000CDA43E /* NotificationController.swift */; };
 		8DE9807320D984C600CDA43E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE9807220D984C600CDA43E /* Assets.xcassets */; };
+		A4839EA73CE56DF9683511A4 /* Pods_MUSC_Anesthesia_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F05CE25C2EE8BE96B6B424D /* Pods_MUSC_Anesthesia_WatchKit_App.framework */; };
+		E3815F99360ED616F5ECA586 /* Pods_MUSC_AnesthesiaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F6A180AC8442768C2E4F64 /* Pods_MUSC_AnesthesiaTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +87,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		33F6A180AC8442768C2E4F64 /* Pods_MUSC_AnesthesiaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MUSC_AnesthesiaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F4A9A7A2D91EE8160F525B2 /* Pods-MUSC-AnesthesiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-AnesthesiaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-AnesthesiaTests/Pods-MUSC-AnesthesiaTests.release.xcconfig"; sourceTree = "<group>"; };
+		5182FC1A30D5CDC3245B885C /* Pods_MUSC_AnesthesiaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MUSC_AnesthesiaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		531373C8B8522DCDDA330142 /* Pods-MUSC-Anesthesia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-Anesthesia.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-Anesthesia/Pods-MUSC-Anesthesia.release.xcconfig"; sourceTree = "<group>"; };
+		53C2EB74701A7F0AA4FD1B49 /* Pods-MUSC-Anesthesia WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-Anesthesia WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-Anesthesia WatchKit App/Pods-MUSC-Anesthesia WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
+		5845A2D5A599582AB64438B9 /* Pods_MUSC_Anesthesia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MUSC_Anesthesia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F05CE25C2EE8BE96B6B424D /* Pods_MUSC_Anesthesia_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MUSC_Anesthesia_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		709BC69DD99A1C4AA0F5AA70 /* Pods-MUSC-Anesthesia WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-Anesthesia WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-Anesthesia WatchKit Extension/Pods-MUSC-Anesthesia WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
+		816600D5DDDD25C77B7D5E6A /* Pods-MUSC-AnesthesiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-AnesthesiaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-AnesthesiaTests/Pods-MUSC-AnesthesiaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		8D135AD420E161840099DB48 /* MUSC-Anesthesia WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUSC-Anesthesia WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
+		8D135AD520E161840099DB48 /* readingCSV.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = readingCSV.cpp; sourceTree = "<group>"; };
+		8D135AD620E161840099DB48 /* readingCSV.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = readingCSV.hpp; sourceTree = "<group>"; };
+		8D135AD820E171B80099DB48 /* csvFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = csvFunctions.h; sourceTree = "<group>"; };
 		8DE9803020D984B500CDA43E /* MUSC-Anesthesia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MUSC-Anesthesia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE9803320D984B500CDA43E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DE9803520D984B500CDA43E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,13 +124,28 @@
 		8DE9807220D984C600CDA43E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DE9807420D984C600CDA43E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DE9807520D984C600CDA43E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		ABB7B90C85DC0A83DDB274B6 /* Pods-MUSC-AnesthesiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-AnesthesiaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-AnesthesiaUITests/Pods-MUSC-AnesthesiaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CAABFC1E2005CD533D569FF5 /* Pods-MUSC-Anesthesia WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-Anesthesia WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-Anesthesia WatchKit App/Pods-MUSC-Anesthesia WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
+		D79EAA8D42D4AB016ACA13CC /* Pods_MUSC_Anesthesia_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MUSC_Anesthesia_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9A8F7ECC0C49C27FC36886E /* Pods-MUSC-Anesthesia WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-Anesthesia WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-Anesthesia WatchKit Extension/Pods-MUSC-Anesthesia WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		E03EC5485EE2FACF78BDD875 /* Pods-MUSC-AnesthesiaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-AnesthesiaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-AnesthesiaUITests/Pods-MUSC-AnesthesiaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F00453B2FCB3A8761A22310F /* Pods-MUSC-Anesthesia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-Anesthesia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-Anesthesia/Pods-MUSC-Anesthesia.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		24A8D067CB18DC72D5666E58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A4839EA73CE56DF9683511A4 /* Pods_MUSC_Anesthesia_WatchKit_App.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DE9802D20D984B500CDA43E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36DB392D24269355739E9DA2 /* Pods_MUSC_Anesthesia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3815F99360ED616F5ECA586 /* Pods_MUSC_AnesthesiaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3933482D812DC2CFD35EE2D8 /* Pods_MUSC_AnesthesiaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,12 +169,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FC01D8B1AB8E2C332C846D5 /* Pods_MUSC_Anesthesia_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		248A9461183760959DC231AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5845A2D5A599582AB64438B9 /* Pods_MUSC_Anesthesia.framework */,
+				6F05CE25C2EE8BE96B6B424D /* Pods_MUSC_Anesthesia_WatchKit_App.framework */,
+				D79EAA8D42D4AB016ACA13CC /* Pods_MUSC_Anesthesia_WatchKit_Extension.framework */,
+				33F6A180AC8442768C2E4F64 /* Pods_MUSC_AnesthesiaTests.framework */,
+				5182FC1A30D5CDC3245B885C /* Pods_MUSC_AnesthesiaUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64535AF785BB5B72A490D055 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F00453B2FCB3A8761A22310F /* Pods-MUSC-Anesthesia.debug.xcconfig */,
+				531373C8B8522DCDDA330142 /* Pods-MUSC-Anesthesia.release.xcconfig */,
+				53C2EB74701A7F0AA4FD1B49 /* Pods-MUSC-Anesthesia WatchKit App.debug.xcconfig */,
+				CAABFC1E2005CD533D569FF5 /* Pods-MUSC-Anesthesia WatchKit App.release.xcconfig */,
+				D9A8F7ECC0C49C27FC36886E /* Pods-MUSC-Anesthesia WatchKit Extension.debug.xcconfig */,
+				709BC69DD99A1C4AA0F5AA70 /* Pods-MUSC-Anesthesia WatchKit Extension.release.xcconfig */,
+				816600D5DDDD25C77B7D5E6A /* Pods-MUSC-AnesthesiaTests.debug.xcconfig */,
+				4F4A9A7A2D91EE8160F525B2 /* Pods-MUSC-AnesthesiaTests.release.xcconfig */,
+				E03EC5485EE2FACF78BDD875 /* Pods-MUSC-AnesthesiaUITests.debug.xcconfig */,
+				ABB7B90C85DC0A83DDB274B6 /* Pods-MUSC-AnesthesiaUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8DE9802720D984B500CDA43E = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +214,8 @@
 				8DE9805C20D984B800CDA43E /* MUSC-Anesthesia WatchKit App */,
 				8DE9806B20D984C000CDA43E /* MUSC-Anesthesia WatchKit Extension */,
 				8DE9803120D984B500CDA43E /* Products */,
+				248A9461183760959DC231AA /* Frameworks */,
+				64535AF785BB5B72A490D055 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,11 +276,15 @@
 			isa = PBXGroup;
 			children = (
 				8DE9806C20D984C000CDA43E /* InterfaceController.swift */,
+				8D135AD520E161840099DB48 /* readingCSV.cpp */,
+				8D135AD620E161840099DB48 /* readingCSV.hpp */,
 				8DE9806E20D984C000CDA43E /* ExtensionDelegate.swift */,
 				8DE9807020D984C000CDA43E /* NotificationController.swift */,
 				8DE9807220D984C600CDA43E /* Assets.xcassets */,
 				8DE9807420D984C600CDA43E /* Info.plist */,
 				8DE9807520D984C600CDA43E /* PushNotificationPayload.apns */,
+				8D135AD820E171B80099DB48 /* csvFunctions.h */,
+				8D135AD420E161840099DB48 /* MUSC-Anesthesia WatchKit Extension-Bridging-Header.h */,
 			);
 			path = "MUSC-Anesthesia WatchKit Extension";
 			sourceTree = "<group>";
@@ -224,6 +296,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DE9808020D984C600CDA43E /* Build configuration list for PBXNativeTarget "MUSC-Anesthesia" */;
 			buildPhases = (
+				F58D19F1EA3E58F4DB43B121 /* [CP] Check Pods Manifest.lock */,
 				8DE9802C20D984B500CDA43E /* Sources */,
 				8DE9802D20D984B500CDA43E /* Frameworks */,
 				8DE9802E20D984B500CDA43E /* Resources */,
@@ -243,6 +316,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DE9808320D984C600CDA43E /* Build configuration list for PBXNativeTarget "MUSC-AnesthesiaTests" */;
 			buildPhases = (
+				924EECACE477251BA22EAA2C /* [CP] Check Pods Manifest.lock */,
 				8DE9804020D984B800CDA43E /* Sources */,
 				8DE9804120D984B800CDA43E /* Frameworks */,
 				8DE9804220D984B800CDA43E /* Resources */,
@@ -261,6 +335,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DE9808620D984C600CDA43E /* Build configuration list for PBXNativeTarget "MUSC-AnesthesiaUITests" */;
 			buildPhases = (
+				891D14B202FD5522429ABF5A /* [CP] Check Pods Manifest.lock */,
 				8DE9804B20D984B800CDA43E /* Sources */,
 				8DE9804C20D984B800CDA43E /* Frameworks */,
 				8DE9804D20D984B800CDA43E /* Resources */,
@@ -279,8 +354,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DE9807C20D984C600CDA43E /* Build configuration list for PBXNativeTarget "MUSC-Anesthesia WatchKit App" */;
 			buildPhases = (
+				46B225AEA92F3B4B0BBF0338 /* [CP] Check Pods Manifest.lock */,
 				8DE9805620D984B800CDA43E /* Resources */,
 				8DE9807B20D984C600CDA43E /* Embed App Extensions */,
+				24A8D067CB18DC72D5666E58 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -296,9 +373,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DE9807820D984C600CDA43E /* Build configuration list for PBXNativeTarget "MUSC-Anesthesia WatchKit Extension" */;
 			buildPhases = (
+				2D484E3387D79CF16317411E /* [CP] Check Pods Manifest.lock */,
 				8DE9806320D984BF00CDA43E /* Sources */,
 				8DE9806420D984BF00CDA43E /* Frameworks */,
 				8DE9806520D984BF00CDA43E /* Resources */,
+				1F92A859343ECBD7582D76E7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -335,6 +414,7 @@
 					};
 					8DE9806620D984BF00CDA43E = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 				};
 			};
@@ -404,6 +484,117 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1F92A859343ECBD7582D76E7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-MUSC-Anesthesia WatchKit Extension/Pods-MUSC-Anesthesia WatchKit Extension-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MUSC-Anesthesia WatchKit Extension/Pods-MUSC-Anesthesia WatchKit Extension-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D484E3387D79CF16317411E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MUSC-Anesthesia WatchKit Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46B225AEA92F3B4B0BBF0338 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MUSC-Anesthesia WatchKit App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		891D14B202FD5522429ABF5A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MUSC-AnesthesiaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		924EECACE477251BA22EAA2C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MUSC-AnesthesiaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F58D19F1EA3E58F4DB43B121 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MUSC-Anesthesia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8DE9802C20D984B500CDA43E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -435,6 +626,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DE9807120D984C000CDA43E /* NotificationController.swift in Sources */,
+				8D135AD720E161840099DB48 /* readingCSV.cpp in Sources */,
 				8DE9806F20D984C000CDA43E /* ExtensionDelegate.swift in Sources */,
 				8DE9806D20D984C000CDA43E /* InterfaceController.swift in Sources */,
 			);
@@ -609,8 +801,10 @@
 		};
 		8DE9807920D984C600CDA43E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9A8F7ECC0C49C27FC36886E /* Pods-MUSC-Anesthesia WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BP48YWP4M3;
 				INFOPLIST_FILE = "MUSC-Anesthesia WatchKit Extension/Info.plist";
@@ -623,6 +817,8 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MUSC-Anesthesia WatchKit Extension/MUSC-Anesthesia WatchKit Extension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.3;
@@ -631,8 +827,10 @@
 		};
 		8DE9807A20D984C600CDA43E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 709BC69DD99A1C4AA0F5AA70 /* Pods-MUSC-Anesthesia WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BP48YWP4M3;
 				INFOPLIST_FILE = "MUSC-Anesthesia WatchKit Extension/Info.plist";
@@ -645,6 +843,7 @@
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MUSC-Anesthesia WatchKit Extension/MUSC-Anesthesia WatchKit Extension-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 4.3;
@@ -653,6 +852,7 @@
 		};
 		8DE9807D20D984C600CDA43E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53C2EB74701A7F0AA4FD1B49 /* Pods-MUSC-Anesthesia WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -672,6 +872,7 @@
 		};
 		8DE9807E20D984C600CDA43E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CAABFC1E2005CD533D569FF5 /* Pods-MUSC-Anesthesia WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -691,11 +892,15 @@
 		};
 		8DE9808120D984C600CDA43E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F00453B2FCB3A8761A22310F /* Pods-MUSC-Anesthesia.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BP48YWP4M3;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "MUSC-Anesthesia/Info.plist";
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = "$(inherited)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -709,11 +914,14 @@
 		};
 		8DE9808220D984C600CDA43E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 531373C8B8522DCDDA330142 /* Pods-MUSC-Anesthesia.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BP48YWP4M3;
 				INFOPLIST_FILE = "MUSC-Anesthesia/Info.plist";
+				LD_QUOTE_LINKER_ARGUMENTS_FOR_COMPILER_DRIVER = "$(inherited)";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -727,6 +935,7 @@
 		};
 		8DE9808420D984C600CDA43E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 816600D5DDDD25C77B7D5E6A /* Pods-MUSC-AnesthesiaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -748,6 +957,7 @@
 		};
 		8DE9808520D984C600CDA43E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F4A9A7A2D91EE8160F525B2 /* Pods-MUSC-AnesthesiaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -769,6 +979,7 @@
 		};
 		8DE9808720D984C600CDA43E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E03EC5485EE2FACF78BDD875 /* Pods-MUSC-AnesthesiaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -789,6 +1000,7 @@
 		};
 		8DE9808820D984C600CDA43E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABB7B90C85DC0A83DDB274B6 /* Pods-MUSC-AnesthesiaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
