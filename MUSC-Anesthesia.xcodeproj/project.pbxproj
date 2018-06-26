@@ -98,8 +98,7 @@
 		816600D5DDDD25C77B7D5E6A /* Pods-MUSC-AnesthesiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-AnesthesiaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-AnesthesiaTests/Pods-MUSC-AnesthesiaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D135AD420E161840099DB48 /* MUSC-Anesthesia WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUSC-Anesthesia WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		8D135AD520E161840099DB48 /* readingCSV.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = readingCSV.cpp; sourceTree = "<group>"; };
-		8D135AD620E161840099DB48 /* readingCSV.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = readingCSV.hpp; sourceTree = "<group>"; };
-		8D135AD820E171B80099DB48 /* csvFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = csvFunctions.h; sourceTree = "<group>"; };
+		8D6581D820E2843F00B7DB80 /* readingCSV.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = readingCSV.h; sourceTree = "<group>"; };
 		8DE9803020D984B500CDA43E /* MUSC-Anesthesia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MUSC-Anesthesia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE9803320D984B500CDA43E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DE9803520D984B500CDA43E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -277,14 +276,13 @@
 			children = (
 				8DE9806C20D984C000CDA43E /* InterfaceController.swift */,
 				8D135AD520E161840099DB48 /* readingCSV.cpp */,
-				8D135AD620E161840099DB48 /* readingCSV.hpp */,
+				8D6581D820E2843F00B7DB80 /* readingCSV.h */,
+				8D135AD420E161840099DB48 /* MUSC-Anesthesia WatchKit Extension-Bridging-Header.h */,
 				8DE9806E20D984C000CDA43E /* ExtensionDelegate.swift */,
 				8DE9807020D984C000CDA43E /* NotificationController.swift */,
 				8DE9807220D984C600CDA43E /* Assets.xcassets */,
 				8DE9807420D984C600CDA43E /* Info.plist */,
 				8DE9807520D984C600CDA43E /* PushNotificationPayload.apns */,
-				8D135AD820E171B80099DB48 /* csvFunctions.h */,
-				8D135AD420E161840099DB48 /* MUSC-Anesthesia WatchKit Extension-Bridging-Header.h */,
 			);
 			path = "MUSC-Anesthesia WatchKit Extension";
 			sourceTree = "<group>";

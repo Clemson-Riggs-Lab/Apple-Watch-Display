@@ -6,8 +6,16 @@
 //  Copyright © 2018 Riggs Lab. All rights reserved.
 //
 
-#ifndef readingCSV_h
-#define readingCSV_h
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-
-#endif /* readingCSV_h */
+// Count number of rows in CSV file
+int countRows();
+    
+// Get data from CSV file
+char **readData();
+    
+#ifdef __cplusplus
+}
+#endif

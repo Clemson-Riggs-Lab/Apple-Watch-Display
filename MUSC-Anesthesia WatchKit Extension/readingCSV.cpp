@@ -1,6 +1,6 @@
 //
 //  readingCSV.cpp
-//  MUSC-Anesthesia WatchKit Extension
+//  MUSC-Anesthesia WatchKit Extens∫ion
 //
 //  Created by Nicolas Threatt on 6/25/18.
 //  Copyright © 2018 Riggs Lab. All rights reserved.
@@ -8,17 +8,13 @@
 
 #include <iostream>
 #include <fstream>
-#include "readingCSV.hpp"
+#include <string.h>
+#include "readingCSV.h"
 
 using namespace std;
 
-int main()
-{
-    int numRows = countRows();
-    readData(numRows);
-    
-    return(0);
-}
+// Path to CSV file
+string filepath = "/Users/nicolasthreatt/Desktop/MUSC-Apple-Watch-Display/patients.csv";
 
 int countRows()
 {
@@ -35,26 +31,32 @@ int countRows()
     return(numLines);
 }
 
-string *readData(int csvRows)
+char **readData()
 {
     int i = 0;
+    int csvRows = countRows();
     
-    string *csvContent;
+    char **csvContent = nullptr;
+    
     string line;
     
     ifstream csvFile;
     
-    csvContent = new string[csvRows];
+    *csvContent = new char[csvRows];
     
     csvFile.open(filepath);
     while(csvFile.good()) {
         getline(csvFile, line, ',');
-        csvContent[i] = line;
-        i++;
         
+        csvContent[i] = new char[line.length() + 1];
+        
+        for(int j = 0; j < line.length(); j++)
+        {
+            csvContent[i][j] = line[j];
+        }
+        i++;
     }
     csvFile.close();
     
     return(csvContent);
 }
-
