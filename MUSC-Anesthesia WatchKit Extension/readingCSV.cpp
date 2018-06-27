@@ -8,22 +8,22 @@
 
 #include <iostream>
 #include <fstream>
-#include <string.h>
+#include <string>
+#include <cstring>
 #include "readingCSV.h"
 
 using namespace std;
 
-// Path to CSV file
-string filepath = "/Users/nicolasthreatt/Desktop/MUSC-Apple-Watch-Display/patients.csv";
-
 int countRows()
 {
     int numLines = 0;
-    
+
     ifstream csvFile;
     
-    csvFile.open(filepath);
+    csvFile.open("patients.csv");
     while(csvFile.good()) {
+        string line;
+        getline(csvFile, line, ',');
         numLines++;
     }
     csvFile.close();
@@ -33,21 +33,19 @@ int countRows()
 
 char **readData()
 {
-    int i = 0;
+    char **csvContent = NULL;
     int csvRows = countRows();
-    
-    char **csvContent = nullptr;
-    
-    string line;
+    int i = 0;
     
     ifstream csvFile;
     
-    *csvContent = new char[csvRows];
+    csvContent = new char*[csvRows + 1];
     
-    csvFile.open(filepath);
+    csvFile.open("patients.csv");
     while(csvFile.good()) {
+        string line;
         getline(csvFile, line, ',');
-        
+
         csvContent[i] = new char[line.length() + 1];
         
         for(int j = 0; j < line.length(); j++)
@@ -59,4 +57,11 @@ char **readData()
     csvFile.close();
     
     return(csvContent);
+}
+
+char *EventType()
+{
+    char **eventData = readData();
+    
+    return(eventData[5]);
 }

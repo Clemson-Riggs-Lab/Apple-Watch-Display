@@ -16,6 +16,9 @@ int countRows();
 // Get data from CSV file
 char **readData();
     
+// Get event data
+char *EventType();
+    
 #ifdef __cplusplus
 }
 #endif

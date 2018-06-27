@@ -14,18 +14,22 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var MedicalIssue: WKInterfaceLabel!
     @IBOutlet var Data: WKInterfaceLabel!
     
-    var data: UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>!
-    var integervalue = CInt()
+    var displayColor = Int()
+    var someData: UnsafeMutablePointer<Int8> = EventType()
     
-    override func awake(withContext context: Any?) {
-        super.awake(withContext: context)
 
+    override func awake(withContext context: Any?) {
         // Configure interface objects here.
+        super.awake(withContext: context)
+        
+//        someData = EventType()
+        let str = String(cString: someData)
+        
         NameRoom.setTextColor(UIColor.magenta)
         NameRoom.setText("Smith - OR 1")
         
         MedicalIssue.setTextColor(UIColor.magenta)
-        MedicalIssue.setText("BPM")
+        MedicalIssue.setText(str)
         
         Data.setTextColor(UIColor.magenta)
         Data.setText("100/60")
@@ -34,6 +38,7 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
+        displayColor = 1;
     }
     
     override func didDeactivate() {
