@@ -14,19 +14,18 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var MedicalIssue: WKInterfaceLabel!
     @IBOutlet var Data: WKInterfaceLabel!
     
-    var data = [[CChar]]()
-    var integervalue = Int32()
+    var data: UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>!
+    var integervalue = CInt()
     
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
-        
-        integervalue = countRows()
+
         // Configure interface objects here.
         NameRoom.setTextColor(UIColor.magenta)
         NameRoom.setText("Smith - OR 1")
         
         MedicalIssue.setTextColor(UIColor.magenta)
-        MedicalIssue.setText("NBP")
+        MedicalIssue.setText("BPM")
         
         Data.setTextColor(UIColor.magenta)
         Data.setText("100/60")
