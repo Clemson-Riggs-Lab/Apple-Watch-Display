@@ -17,16 +17,17 @@ using namespace std;
 int countRows()
 {
     int numLines = 0;
+    string line;
 
     ifstream csvFile;
     
-    csvFile.open("patients.csv");
-    while(csvFile.good()) {
-        string line;
-        getline(csvFile, line, ',');
+    csvFile.open("/Users/nicolasthreatt/Desktop/MUSC-Apple-Watch-Display/MUSC-Anesthesia WatchKit Extension/patients.csv");
+    while( getline(csvFile, line, ',')) {
         numLines++;
     }
+    cout << numLines << endl;
     csvFile.close();
+    
     
     return(numLines);
 }
@@ -62,6 +63,6 @@ char **readData()
 char *EventType()
 {
     char **eventData = readData();
-    
+
     return(eventData[5]);
 }
