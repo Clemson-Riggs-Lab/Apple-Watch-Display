@@ -11,8 +11,8 @@
 		3933482D812DC2CFD35EE2D8 /* Pods_MUSC_AnesthesiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5182FC1A30D5CDC3245B885C /* Pods_MUSC_AnesthesiaUITests.framework */; };
 		7FC01D8B1AB8E2C332C846D5 /* Pods_MUSC_Anesthesia_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79EAA8D42D4AB016ACA13CC /* Pods_MUSC_Anesthesia_WatchKit_Extension.framework */; };
 		8D09291C20E54BDB00AC852B /* patients.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8D09291B20E54BDA00AC852B /* patients.csv */; };
-		8D09291E20E5660A00AC852B /* patients.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8D09291D20E5660A00AC852B /* patients.txt */; };
 		8D6581DC20E409B800B7DB80 /* readingCSV.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8D6581DB20E409B800B7DB80 /* readingCSV.cpp */; };
+		8DD8A78920E6921F00BA8EA2 /* patients.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DD8A78820E6921E00BA8EA2 /* patients.txt */; };
 		8DE9803420D984B500CDA43E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9803320D984B500CDA43E /* AppDelegate.swift */; };
 		8DE9803620D984B500CDA43E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9803520D984B500CDA43E /* ViewController.swift */; };
 		8DE9803920D984B500CDA43E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE9803720D984B500CDA43E /* Main.storyboard */; };
@@ -99,10 +99,10 @@
 		709BC69DD99A1C4AA0F5AA70 /* Pods-MUSC-Anesthesia WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-Anesthesia WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-Anesthesia WatchKit Extension/Pods-MUSC-Anesthesia WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		816600D5DDDD25C77B7D5E6A /* Pods-MUSC-AnesthesiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-AnesthesiaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-AnesthesiaTests/Pods-MUSC-AnesthesiaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D09291B20E54BDA00AC852B /* patients.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = patients.csv; sourceTree = "<group>"; };
-		8D09291D20E5660A00AC852B /* patients.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = patients.txt; path = ../../../Downloads/patients.txt; sourceTree = "<group>"; };
 		8D135AD420E161840099DB48 /* MUSC-Anesthesia WatchKit Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUSC-Anesthesia WatchKit Extension-Bridging-Header.h"; sourceTree = "<group>"; };
 		8D6581D820E2843F00B7DB80 /* readingCSV.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = readingCSV.h; sourceTree = "<group>"; };
 		8D6581DB20E409B800B7DB80 /* readingCSV.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = readingCSV.cpp; path = "/Users/nicolasthreatt/Desktop/MUSC-Apple-Watch-Display/MUSC-Anesthesia WatchKit Extension/readingCSV.cpp"; sourceTree = "<absolute>"; };
+		8DD8A78820E6921E00BA8EA2 /* patients.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = patients.txt; path = ../../../Downloads/patients.txt; sourceTree = "<group>"; };
 		8DE9803020D984B500CDA43E /* MUSC-Anesthesia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MUSC-Anesthesia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE9803320D984B500CDA43E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DE9803520D984B500CDA43E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -278,7 +278,7 @@
 		8DE9806B20D984C000CDA43E /* MUSC-Anesthesia WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				8D09291D20E5660A00AC852B /* patients.txt */,
+				8DD8A78820E6921E00BA8EA2 /* patients.txt */,
 				8D09291B20E54BDA00AC852B /* patients.csv */,
 				8DE9806C20D984C000CDA43E /* InterfaceController.swift */,
 				8D6581DB20E409B800B7DB80 /* readingCSV.cpp */,
@@ -482,7 +482,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D09291E20E5660A00AC852B /* patients.txt in Resources */,
+				8DD8A78920E6921F00BA8EA2 /* patients.txt in Resources */,
 				8D09291C20E54BDB00AC852B /* patients.csv in Resources */,
 				8DE9807320D984C600CDA43E /* Assets.xcassets in Resources */,
 			);
