@@ -240,7 +240,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DE9808020D984C600CDA43E /* Build configuration list for PBXNativeTarget "MUSC-Anesthesia" */;
 			buildPhases = (
-				F58D19F1EA3E58F4DB43B121 /* [CP] Check Pods Manifest.lock */,
 				8DE9802C20D984B500CDA43E /* Sources */,
 				8DE9802D20D984B500CDA43E /* Frameworks */,
 				8DE9802E20D984B500CDA43E /* Resources */,
@@ -260,7 +259,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DE9808320D984C600CDA43E /* Build configuration list for PBXNativeTarget "MUSC-AnesthesiaTests" */;
 			buildPhases = (
-				924EECACE477251BA22EAA2C /* [CP] Check Pods Manifest.lock */,
 				8DE9804020D984B800CDA43E /* Sources */,
 				8DE9804120D984B800CDA43E /* Frameworks */,
 				8DE9804220D984B800CDA43E /* Resources */,
@@ -279,7 +277,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DE9808620D984C600CDA43E /* Build configuration list for PBXNativeTarget "MUSC-AnesthesiaUITests" */;
 			buildPhases = (
-				891D14B202FD5522429ABF5A /* [CP] Check Pods Manifest.lock */,
 				8DE9804B20D984B800CDA43E /* Sources */,
 				8DE9804C20D984B800CDA43E /* Frameworks */,
 				8DE9804D20D984B800CDA43E /* Resources */,
@@ -298,7 +295,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DE9807C20D984C600CDA43E /* Build configuration list for PBXNativeTarget "MUSC-Anesthesia WatchKit App" */;
 			buildPhases = (
-				46B225AEA92F3B4B0BBF0338 /* [CP] Check Pods Manifest.lock */,
 				8DE9805620D984B800CDA43E /* Resources */,
 				8DE9807B20D984C600CDA43E /* Embed App Extensions */,
 				24A8D067CB18DC72D5666E58 /* Frameworks */,
@@ -317,11 +313,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DE9807820D984C600CDA43E /* Build configuration list for PBXNativeTarget "MUSC-Anesthesia WatchKit Extension" */;
 			buildPhases = (
-				2D484E3387D79CF16317411E /* [CP] Check Pods Manifest.lock */,
 				8DE9806320D984BF00CDA43E /* Sources */,
 				8DE9806420D984BF00CDA43E /* Frameworks */,
 				8DE9806520D984BF00CDA43E /* Resources */,
-				1F92A859343ECBD7582D76E7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -430,117 +424,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1F92A859343ECBD7582D76E7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MUSC-Anesthesia WatchKit Extension/Pods-MUSC-Anesthesia WatchKit Extension-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/CSV.swift/CSV.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CSV.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MUSC-Anesthesia WatchKit Extension/Pods-MUSC-Anesthesia WatchKit Extension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2D484E3387D79CF16317411E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MUSC-Anesthesia WatchKit Extension-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		46B225AEA92F3B4B0BBF0338 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MUSC-Anesthesia WatchKit App-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		891D14B202FD5522429ABF5A /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MUSC-AnesthesiaUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		924EECACE477251BA22EAA2C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MUSC-AnesthesiaTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F58D19F1EA3E58F4DB43B121 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MUSC-Anesthesia-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8DE9802C20D984B500CDA43E /* Sources */ = {
@@ -766,7 +649,7 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
 		};
@@ -790,7 +673,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "MUSC-Anesthesia WatchKit Extension/MUSC-Anesthesia WatchKit Extension-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
 		};
@@ -809,7 +692,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Debug;
 		};
@@ -828,7 +711,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 4.3;
+				WATCHOS_DEPLOYMENT_TARGET = 4.0;
 			};
 			name = Release;
 		};
