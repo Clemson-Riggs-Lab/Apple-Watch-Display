@@ -17,21 +17,47 @@
                         <label width="136" height="32" alignment="left" text="Name - Room #" textAlignment="center" id="gkf-ky-RUU">
                             <fontDescription key="font" type="system" pointSize="22"/>
                         </label>
-                        <label width="117" height="29" alignment="left" verticalAlignment="bottom" text="Medical Issue" id="gTO-zC-94e">
+                        <label width="131" height="22" alignment="left" verticalAlignment="bottom" text="Medical Issue" id="gTO-zC-94e">
                             <fontDescription key="font" type="system" pointSize="18"/>
                         </label>
-                        <label width="136" height="59" alignment="left" verticalAlignment="bottom" text="Data" textAlignment="left" id="V76-FA-H8J" propertyAccessControl="none">
+                        <label width="39" height="15" alignment="left" verticalAlignment="bottom" text="Et" id="ljA-5Y-2ua">
+                            <fontDescription key="font" type="system" pointSize="20"/>
+                        </label>
+                        <label width="131" height="42" alignment="left" verticalAlignment="bottom" text="Data" textAlignment="left" id="V76-FA-H8J" propertyAccessControl="none">
                             <fontDescription key="font" type="system" pointSize="39"/>
                         </label>
                     </items>
                     <connections>
                         <outlet property="Data" destination="V76-FA-H8J" id="Qf2-IY-Y07"/>
+                        <outlet property="Et" destination="ljA-5Y-2ua" id="DqH-lp-hNL"/>
                         <outlet property="MedicalIssue" destination="gTO-zC-94e" id="aRI-eV-o9k"/>
                         <outlet property="NameRoom" destination="gkf-ky-RUU" id="K6t-oE-xSg"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="345"/>
+            <point key="canvasLocation" x="220" y="337"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="M3n-Vh-Z4m">
+            <objects>
+                <controller id="X7M-gl-50Z">
+                    <items>
+                        <label width="136" height="32" alignment="left" text="Name - Room #" textAlignment="center" id="EWf-OA-OJj">
+                            <fontDescription key="font" type="system" pointSize="22"/>
+                        </label>
+                        <label width="99" height="19" alignment="left" verticalAlignment="bottom" text="C02 mmHg" id="8nr-OD-9k1">
+                            <fontDescription key="font" type="system" pointSize="18"/>
+                        </label>
+                        <label width="95" height="16" alignment="left" verticalAlignment="bottom" text="Et" id="UXx-EQ-8D6">
+                            <fontDescription key="font" type="system" pointSize="20"/>
+                        </label>
+                        <label width="136" height="48" alignment="left" verticalAlignment="bottom" text="Data" id="7XY-yr-bNS">
+                            <fontDescription key="font" type="system" pointSize="39"/>
+                        </label>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="344"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
