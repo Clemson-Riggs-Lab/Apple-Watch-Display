@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/nicolasthreatt/Desktop/MUSC-Apple-Watch-Display/MUSC-Anesthesia WatchKit Extension/readingCSV.cpp">
-   </FileRef>
-   <FileRef
       location = "group:MUSC-Anesthesia.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>

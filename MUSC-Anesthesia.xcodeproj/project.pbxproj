@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		36DB392D24269355739E9DA2 /* Pods_MUSC_Anesthesia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5845A2D5A599582AB64438B9 /* Pods_MUSC_Anesthesia.framework */; };
-		3933482D812DC2CFD35EE2D8 /* Pods_MUSC_AnesthesiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5182FC1A30D5CDC3245B885C /* Pods_MUSC_AnesthesiaUITests.framework */; };
-		7FC01D8B1AB8E2C332C846D5 /* Pods_MUSC_Anesthesia_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79EAA8D42D4AB016ACA13CC /* Pods_MUSC_Anesthesia_WatchKit_Extension.framework */; };
 		8D09291C20E54BDB00AC852B /* patients.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8D09291B20E54BDA00AC852B /* patients.csv */; };
 		8DD8A78B20E6BA3500BA8EA2 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8DD8A78A20E6BA3500BA8EA2 /* Base.lproj */; };
 		8DD8A78D20EA81C000BA8EA2 /* patients.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DD8A78C20EA81BF00BA8EA2 /* patients.txt */; };
@@ -28,8 +25,6 @@
 		8DE9806F20D984C000CDA43E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9806E20D984C000CDA43E /* ExtensionDelegate.swift */; };
 		8DE9807120D984C000CDA43E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9807020D984C000CDA43E /* NotificationController.swift */; };
 		8DE9807320D984C600CDA43E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE9807220D984C600CDA43E /* Assets.xcassets */; };
-		A4839EA73CE56DF9683511A4 /* Pods_MUSC_Anesthesia_WatchKit_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F05CE25C2EE8BE96B6B424D /* Pods_MUSC_Anesthesia_WatchKit_App.framework */; };
-		E3815F99360ED616F5ECA586 /* Pods_MUSC_AnesthesiaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33F6A180AC8442768C2E4F64 /* Pods_MUSC_AnesthesiaTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,15 +84,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		33F6A180AC8442768C2E4F64 /* Pods_MUSC_AnesthesiaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MUSC_AnesthesiaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F4A9A7A2D91EE8160F525B2 /* Pods-MUSC-AnesthesiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-AnesthesiaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-AnesthesiaTests/Pods-MUSC-AnesthesiaTests.release.xcconfig"; sourceTree = "<group>"; };
-		5182FC1A30D5CDC3245B885C /* Pods_MUSC_AnesthesiaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MUSC_AnesthesiaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		531373C8B8522DCDDA330142 /* Pods-MUSC-Anesthesia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-Anesthesia.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-Anesthesia/Pods-MUSC-Anesthesia.release.xcconfig"; sourceTree = "<group>"; };
-		53C2EB74701A7F0AA4FD1B49 /* Pods-MUSC-Anesthesia WatchKit App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-Anesthesia WatchKit App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-Anesthesia WatchKit App/Pods-MUSC-Anesthesia WatchKit App.debug.xcconfig"; sourceTree = "<group>"; };
-		5845A2D5A599582AB64438B9 /* Pods_MUSC_Anesthesia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MUSC_Anesthesia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F05CE25C2EE8BE96B6B424D /* Pods_MUSC_Anesthesia_WatchKit_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MUSC_Anesthesia_WatchKit_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		709BC69DD99A1C4AA0F5AA70 /* Pods-MUSC-Anesthesia WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-Anesthesia WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-Anesthesia WatchKit Extension/Pods-MUSC-Anesthesia WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
-		816600D5DDDD25C77B7D5E6A /* Pods-MUSC-AnesthesiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-AnesthesiaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-AnesthesiaTests/Pods-MUSC-AnesthesiaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D09291B20E54BDA00AC852B /* patients.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = patients.csv; sourceTree = "<group>"; };
 		8DD8A78A20E6BA3500BA8EA2 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		8DD8A78C20EA81BF00BA8EA2 /* patients.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = patients.txt; sourceTree = "<group>"; };
@@ -125,12 +111,6 @@
 		8DE9807220D984C600CDA43E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DE9807420D984C600CDA43E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DE9807520D984C600CDA43E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		ABB7B90C85DC0A83DDB274B6 /* Pods-MUSC-AnesthesiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-AnesthesiaUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-AnesthesiaUITests/Pods-MUSC-AnesthesiaUITests.release.xcconfig"; sourceTree = "<group>"; };
-		CAABFC1E2005CD533D569FF5 /* Pods-MUSC-Anesthesia WatchKit App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-Anesthesia WatchKit App.release.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-Anesthesia WatchKit App/Pods-MUSC-Anesthesia WatchKit App.release.xcconfig"; sourceTree = "<group>"; };
-		D79EAA8D42D4AB016ACA13CC /* Pods_MUSC_Anesthesia_WatchKit_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MUSC_Anesthesia_WatchKit_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D9A8F7ECC0C49C27FC36886E /* Pods-MUSC-Anesthesia WatchKit Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-Anesthesia WatchKit Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-Anesthesia WatchKit Extension/Pods-MUSC-Anesthesia WatchKit Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		E03EC5485EE2FACF78BDD875 /* Pods-MUSC-AnesthesiaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-AnesthesiaUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-AnesthesiaUITests/Pods-MUSC-AnesthesiaUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		F00453B2FCB3A8761A22310F /* Pods-MUSC-Anesthesia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MUSC-Anesthesia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MUSC-Anesthesia/Pods-MUSC-Anesthesia.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +118,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4839EA73CE56DF9683511A4 /* Pods_MUSC_Anesthesia_WatchKit_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +125,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36DB392D24269355739E9DA2 /* Pods_MUSC_Anesthesia.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,7 +132,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3815F99360ED616F5ECA586 /* Pods_MUSC_AnesthesiaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +139,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3933482D812DC2CFD35EE2D8 /* Pods_MUSC_AnesthesiaUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,42 +146,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FC01D8B1AB8E2C332C846D5 /* Pods_MUSC_Anesthesia_WatchKit_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		248A9461183760959DC231AA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5845A2D5A599582AB64438B9 /* Pods_MUSC_Anesthesia.framework */,
-				6F05CE25C2EE8BE96B6B424D /* Pods_MUSC_Anesthesia_WatchKit_App.framework */,
-				D79EAA8D42D4AB016ACA13CC /* Pods_MUSC_Anesthesia_WatchKit_Extension.framework */,
-				33F6A180AC8442768C2E4F64 /* Pods_MUSC_AnesthesiaTests.framework */,
-				5182FC1A30D5CDC3245B885C /* Pods_MUSC_AnesthesiaUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		64535AF785BB5B72A490D055 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F00453B2FCB3A8761A22310F /* Pods-MUSC-Anesthesia.debug.xcconfig */,
-				531373C8B8522DCDDA330142 /* Pods-MUSC-Anesthesia.release.xcconfig */,
-				53C2EB74701A7F0AA4FD1B49 /* Pods-MUSC-Anesthesia WatchKit App.debug.xcconfig */,
-				CAABFC1E2005CD533D569FF5 /* Pods-MUSC-Anesthesia WatchKit App.release.xcconfig */,
-				D9A8F7ECC0C49C27FC36886E /* Pods-MUSC-Anesthesia WatchKit Extension.debug.xcconfig */,
-				709BC69DD99A1C4AA0F5AA70 /* Pods-MUSC-Anesthesia WatchKit Extension.release.xcconfig */,
-				816600D5DDDD25C77B7D5E6A /* Pods-MUSC-AnesthesiaTests.debug.xcconfig */,
-				4F4A9A7A2D91EE8160F525B2 /* Pods-MUSC-AnesthesiaTests.release.xcconfig */,
-				E03EC5485EE2FACF78BDD875 /* Pods-MUSC-AnesthesiaUITests.debug.xcconfig */,
-				ABB7B90C85DC0A83DDB274B6 /* Pods-MUSC-AnesthesiaUITests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		8DE9802720D984B500CDA43E = {
 			isa = PBXGroup;
 			children = (
@@ -215,8 +161,6 @@
 				8DE9805C20D984B800CDA43E /* MUSC-Anesthesia WatchKit App */,
 				8DE9806B20D984C000CDA43E /* MUSC-Anesthesia WatchKit Extension */,
 				8DE9803120D984B500CDA43E /* Products */,
-				248A9461183760959DC231AA /* Frameworks */,
-				64535AF785BB5B72A490D055 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -803,7 +747,6 @@
 		};
 		8DE9807920D984C600CDA43E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9A8F7ECC0C49C27FC36886E /* Pods-MUSC-Anesthesia WatchKit Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ENABLE_MODULES = YES;
@@ -829,7 +772,6 @@
 		};
 		8DE9807A20D984C600CDA43E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 709BC69DD99A1C4AA0F5AA70 /* Pods-MUSC-Anesthesia WatchKit Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CLANG_ENABLE_MODULES = YES;
@@ -854,7 +796,6 @@
 		};
 		8DE9807D20D984C600CDA43E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 53C2EB74701A7F0AA4FD1B49 /* Pods-MUSC-Anesthesia WatchKit App.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -874,7 +815,6 @@
 		};
 		8DE9807E20D984C600CDA43E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CAABFC1E2005CD533D569FF5 /* Pods-MUSC-Anesthesia WatchKit App.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -894,7 +834,6 @@
 		};
 		8DE9808120D984C600CDA43E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F00453B2FCB3A8761A22310F /* Pods-MUSC-Anesthesia.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -916,7 +855,6 @@
 		};
 		8DE9808220D984C600CDA43E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 531373C8B8522DCDDA330142 /* Pods-MUSC-Anesthesia.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -937,7 +875,6 @@
 		};
 		8DE9808420D984C600CDA43E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 816600D5DDDD25C77B7D5E6A /* Pods-MUSC-AnesthesiaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -959,7 +896,6 @@
 		};
 		8DE9808520D984C600CDA43E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F4A9A7A2D91EE8160F525B2 /* Pods-MUSC-AnesthesiaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -981,7 +917,6 @@
 		};
 		8DE9808720D984C600CDA43E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E03EC5485EE2FACF78BDD875 /* Pods-MUSC-AnesthesiaUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1002,7 +937,6 @@
 		};
 		8DE9808820D984C600CDA43E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ABB7B90C85DC0A83DDB274B6 /* Pods-MUSC-AnesthesiaUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
