@@ -14,11 +14,14 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var MedicalIssue: WKInterfaceLabel!
     @IBOutlet var Data: WKInterfaceLabel!
     @IBOutlet var Et: WKInterfaceLabel!
+    @IBOutlet var DirectionArrow: WKInterfaceLabel!
+    @IBOutlet var underline: WKInterfaceSeparator!
     
     var txtData: [String]?
     var patientNameRoom = [String]()
     var patientIssue = [String]()
     var patientData = [String]()
+    
     
     var rows = Int()
     var i = 0
@@ -35,14 +38,16 @@ class InterfaceController: WKInterfaceController {
         // Configure interface objects here.
         super.awake(withContext: context)
 
+        DirectionArrow.setText("->")
         NameRoom.setTextColor(UIColor.black)
+        underline.setColor(UIColor.black)
         MedicalIssue.setTextColor(UIColor.black)
         Data.setTextColor(UIColor.black)
         Et.setTextColor(UIColor.black)
-        
+
         txtData = readTXTIntoArray(file: fileName)
         assignLables()
-        
+
         _ = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(enableDisplay), userInfo: nil, repeats: true)
     }
     
@@ -71,7 +76,6 @@ class InterfaceController: WKInterfaceController {
             for _ in 0..<numCols  {
                 contentsFiltered.removeFirst()
             }
-            
             rows = contentsFiltered.count / numCols
             
             return contentsFiltered
@@ -113,6 +117,8 @@ class InterfaceController: WKInterfaceController {
         NameRoom.setTextColor(UIColor.magenta)
         NameRoom.setText(patientNameRoom[i])
         
+        underline.setColor(UIColor.magenta)
+        
         MedicalIssue.setTextColor(UIColor.magenta)
         MedicalIssue.setText(patientIssue[i])
         
@@ -123,6 +129,8 @@ class InterfaceController: WKInterfaceController {
     func displaySP02() {
         NameRoom.setTextColor(UIColor.cyan)
         NameRoom.setText(patientNameRoom[i])
+        
+        underline.setColor(UIColor.cyan)
         
         MedicalIssue.setTextColor(UIColor.cyan)
         MedicalIssue.setText(patientIssue[i])
@@ -135,13 +143,37 @@ class InterfaceController: WKInterfaceController {
         NameRoom.setTextColor(UIColor.white)
         NameRoom.setText(patientNameRoom[i])
         
+        underline.setColor(UIColor.white)
+        
         MedicalIssue.setTextColor(UIColor.white)
         MedicalIssue.setText("CO2 mm Hg")
         Et.setTextColor(UIColor.white)
         
         Data.setTextColor(UIColor.white)
         Data.setText(patientData[i])
+    }
+    
+    func checkPatient() {
         
+        if(i > 0) {
+            let prevPatientData:Int? = Int(patientData[i - 1])
+            let currentPatientData:Int? = Int(patientData[i])
+            
+            if (prevPatientData == currentPatientData) {
+                // Display nothing
+                DirectionArrow.setTextColor(UIColor.black)
+            }
+            else if (prevPatientData! > currentPatientData!) {
+                // Display down
+                
+                
+            }
+            else if (prevPatientData! < currentPatientData!) {
+                // Display up
+                
+                
+            }
+        }
     }
     
     func checkIterator() {
@@ -149,4 +181,5 @@ class InterfaceController: WKInterfaceController {
             i = 0
         }
     }
+    
 }

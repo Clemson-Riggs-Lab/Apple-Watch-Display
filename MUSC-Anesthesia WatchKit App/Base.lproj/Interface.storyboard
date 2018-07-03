@@ -17,6 +17,7 @@
                         <label width="136" height="32" alignment="left" text="Name - Room #" textAlignment="center" id="gkf-ky-RUU">
                             <fontDescription key="font" type="system" pointSize="22"/>
                         </label>
+                        <separator width="136" alignment="left" id="vay-G6-k02"/>
                         <label width="131" height="22" alignment="left" verticalAlignment="bottom" text="Medical Issue" id="gTO-zC-94e">
                             <fontDescription key="font" type="system" pointSize="18"/>
                         </label>
@@ -32,10 +33,11 @@
                         <outlet property="Et" destination="ljA-5Y-2ua" id="DqH-lp-hNL"/>
                         <outlet property="MedicalIssue" destination="gTO-zC-94e" id="aRI-eV-o9k"/>
                         <outlet property="NameRoom" destination="gkf-ky-RUU" id="K6t-oE-xSg"/>
+                        <outlet property="underline" destination="vay-G6-k02" id="Dhj-OE-cyf"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="337"/>
+            <point key="canvasLocation" x="220" y="336.5"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="M3n-Vh-Z4m">
@@ -57,7 +59,7 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="468" y="344"/>
+            <point key="canvasLocation" x="468" y="334"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
