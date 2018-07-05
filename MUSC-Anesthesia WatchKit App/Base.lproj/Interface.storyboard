@@ -18,18 +18,24 @@
                             <fontDescription key="font" type="system" pointSize="22"/>
                         </label>
                         <separator width="136" alignment="left" id="vay-G6-k02"/>
-                        <label width="131" height="22" alignment="left" verticalAlignment="bottom" text="Medical Issue" id="gTO-zC-94e">
+                        <label width="132" height="29" alignment="left" text="Medical Issue" textAlignment="left" id="gTO-zC-94e">
                             <fontDescription key="font" type="system" pointSize="18"/>
                         </label>
-                        <label width="39" height="15" alignment="left" verticalAlignment="bottom" text="Et" id="ljA-5Y-2ua">
+                        <label width="20" height="14" alignment="left" text="Et" id="ljA-5Y-2ua">
                             <fontDescription key="font" type="system" pointSize="20"/>
                         </label>
-                        <label width="131" height="42" alignment="left" verticalAlignment="bottom" text="Data" textAlignment="left" id="V76-FA-H8J" propertyAccessControl="none">
-                            <fontDescription key="font" type="system" pointSize="39"/>
-                        </label>
+                        <group width="134" height="71" alignment="left" verticalAlignment="bottom" radius="6" spacing="2" id="tVh-Y7-bpf">
+                            <items>
+                                <label width="76" height="42" alignment="left" verticalAlignment="bottom" text="Data" textAlignment="left" id="V76-FA-H8J" propertyAccessControl="none">
+                                    <fontDescription key="font" type="system" pointSize="39"/>
+                                </label>
+                                <imageView width="52" height="65" alignment="left" id="g7S-YY-8up"/>
+                            </items>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="Data" destination="V76-FA-H8J" id="Qf2-IY-Y07"/>
+                        <outlet property="DirectionArrow" destination="g7S-YY-8up" id="COw-Pd-4bc"/>
                         <outlet property="Et" destination="ljA-5Y-2ua" id="DqH-lp-hNL"/>
                         <outlet property="MedicalIssue" destination="gTO-zC-94e" id="aRI-eV-o9k"/>
                         <outlet property="NameRoom" destination="gkf-ky-RUU" id="K6t-oE-xSg"/>
@@ -37,7 +43,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="336.5"/>
+            <point key="canvasLocation" x="220" y="329.5"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="M3n-Vh-Z4m">

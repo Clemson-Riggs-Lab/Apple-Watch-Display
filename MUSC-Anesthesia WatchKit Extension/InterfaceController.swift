@@ -14,14 +14,15 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var MedicalIssue: WKInterfaceLabel!
     @IBOutlet var Data: WKInterfaceLabel!
     @IBOutlet var Et: WKInterfaceLabel!
-    @IBOutlet var DirectionArrow: WKInterfaceLabel!
+    
     @IBOutlet var underline: WKInterfaceSeparator!
+
+    @IBOutlet var DirectionArrow: WKInterfaceImage!
     
     var txtData: [String]?
     var patientNameRoom = [String]()
     var patientIssue = [String]()
     var patientData = [String]()
-    
     
     var rows = Int()
     var i = 0
@@ -38,7 +39,7 @@ class InterfaceController: WKInterfaceController {
         // Configure interface objects here.
         super.awake(withContext: context)
 
-        DirectionArrow.setText("->")
+
         NameRoom.setTextColor(UIColor.black)
         underline.setColor(UIColor.black)
         MedicalIssue.setTextColor(UIColor.black)
@@ -97,7 +98,7 @@ class InterfaceController: WKInterfaceController {
     
     @objc func enableDisplay() {
         Et.setTextColor(UIColor.black)
-        
+        _ = UIBezierPath.arrow(from: CGPoint(x: 5, y: 10), to: CGPoint(x: 20, y: 5), tailWidth: 5, headWidth: 13, headLength: 20)
         switch(patientIssue[i]) {
         case "NBP":
             displayBP()
@@ -161,7 +162,7 @@ class InterfaceController: WKInterfaceController {
             
             if (prevPatientData == currentPatientData) {
                 // Display nothing
-                DirectionArrow.setTextColor(UIColor.black)
+
             }
             else if (prevPatientData! > currentPatientData!) {
                 // Display down
@@ -180,6 +181,35 @@ class InterfaceController: WKInterfaceController {
         if(i >= rows) {
             i = 0
         }
+    }
+}
+
+extension UIBezierPath {
+    
+    static func arrow(from start: CGPoint, to end: CGPoint, tailWidth: CGFloat, headWidth: CGFloat, headLength: CGFloat) -> UIBezierPath {
+        let length = hypot(end.x - start.x, end.y - start.y)
+        let tailLength = length - headLength
+        
+        func p(_ x: CGFloat, _ y: CGFloat) -> CGPoint { return CGPoint(x: x, y: y) }
+        let points: [CGPoint] = [
+            p(0, tailWidth / 2),
+            p(tailLength, tailWidth / 2),
+            p(tailLength, headWidth / 2),
+            p(length, 0),
+            p(tailLength, -headWidth / 2),
+            p(tailLength, -tailWidth / 2),
+            p(0, -tailWidth / 2)
+        ]
+        
+        let cosine = (end.x - start.x) / length
+        let sine = (end.y - start.y) / length
+        let transform = CGAffineTransform(a: cosine, b: sine, c: -sine, d: cosine, tx: start.x, ty: start.y)
+        
+        let path = CGMutablePath()
+        path.addLines(between: points, transform: transform)
+        path.closeSubpath()
+        
+        return self.init(cgPath: path)
     }
     
 }
