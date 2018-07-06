@@ -14,15 +14,23 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var MedicalIssue: WKInterfaceLabel!
     @IBOutlet var Data: WKInterfaceLabel!
     @IBOutlet var Et: WKInterfaceLabel!
-    
-    @IBOutlet var underline: WKInterfaceSeparator!
+    @IBOutlet var DirectionArrow: WKInterfaceLabel!
 
-    @IBOutlet var DirectionArrow: WKInterfaceImage!
+    @IBOutlet var underline: WKInterfaceSeparator!
     
     var txtData: [String]?
     var patientNameRoom = [String]()
     var patientIssue = [String]()
     var patientData = [String]()
+    
+    var currentPatientIssue = String()
+    var specifiedIssue = String()
+    var currentData = String()
+    var prevData = String()
+
+    var NBPData = [String]()
+    var SpO2Data = [String]()
+    var CO2Data = [String]()
     
     var rows = Int()
     var i = 0
@@ -38,7 +46,6 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
         super.awake(withContext: context)
-
 
         NameRoom.setTextColor(UIColor.black)
         underline.setColor(UIColor.black)
@@ -98,13 +105,46 @@ class InterfaceController: WKInterfaceController {
     
     @objc func enableDisplay() {
         Et.setTextColor(UIColor.black)
-        _ = UIBezierPath.arrow(from: CGPoint(x: 5, y: 10), to: CGPoint(x: 20, y: 5), tailWidth: 5, headWidth: 13, headLength: 20)
-        switch(patientIssue[i]) {
+
+        currentPatientIssue = patientIssue[i]
+        currentData = patientData[i]
+        
+        switch(currentPatientIssue) {
         case "NBP":
+            specifiedIssue = patientIssue[i]
+            
+            NBPData.append(patientData[i])
+            if(NBPData.count >= 2) {
+                prevData = NBPData[NBPData.count - 2]
+            }
+            else {
+                prevData = currentData
+            }
+            
             displayBP()
         case "SpO2":
+            specifiedIssue = patientIssue[i]
+            
+            SpO2Data.append(patientData[i])
+            if(SpO2Data.count >= 2) {
+                prevData = SpO2Data[SpO2Data.count - 2]
+            }
+            else {
+                prevData = currentData
+            }
+            
             displaySP02()
         case "CO2":
+            specifiedIssue = patientIssue[i]
+            
+            CO2Data.append(patientIssue[i])
+            if(CO2Data.count >= 2) {
+                prevData = CO2Data[CO2Data.count - 2]
+            }
+            else {
+                prevData = currentData
+            }
+            
             displayCO2()
         default:
             print(patientIssue[i])
@@ -125,6 +165,8 @@ class InterfaceController: WKInterfaceController {
         
         Data.setTextColor(UIColor.magenta)
         Data.setText(patientData[i])
+        
+        DirectionArrow.setTextColor(UIColor.magenta)
     }
     
     func displaySP02() {
@@ -138,6 +180,8 @@ class InterfaceController: WKInterfaceController {
         
         Data.setTextColor(UIColor.cyan)
         Data.setText(patientData[i])
+        
+        DirectionArrow.setTextColor(UIColor.cyan)
     }
     
     func displayCO2() {
@@ -152,27 +196,31 @@ class InterfaceController: WKInterfaceController {
         
         Data.setTextColor(UIColor.white)
         Data.setText(patientData[i])
+        
+        DirectionArrow.setTextColor(UIColor.white)
+        checkPatient()
     }
     
     func checkPatient() {
         
         if(i > 0) {
-            let prevPatientData:Int? = Int(patientData[i - 1])
-            let currentPatientData:Int? = Int(patientData[i])
-            
-            if (prevPatientData == currentPatientData) {
-                // Display nothing
-
-            }
-            else if (prevPatientData! > currentPatientData!) {
-                // Display down
+            if ( currentPatientIssue == specifiedIssue ) {
                 
+                let prevDataInt:Int? = Int(prevData)
+                let currentDataInt:Int? = Int(patientData[i])
                 
-            }
-            else if (prevPatientData! < currentPatientData!) {
-                // Display up
-                
-                
+                if (prevDataInt == currentDataInt) {
+                    // Display nothing
+                    DirectionArrow.setText(" ")
+                }
+                else if (prevDataInt! > currentDataInt!) {
+                    // Display Down Arrow
+                    DirectionArrow.setText("\u{2193}")
+                }
+                else if (prevDataInt! < currentDataInt!) {
+                    // Display Up Arrow
+                    DirectionArrow.setText("\u{2191}")
+                }
             }
         }
     }
@@ -182,34 +230,6 @@ class InterfaceController: WKInterfaceController {
             i = 0
         }
     }
+    
 }
 
-extension UIBezierPath {
-    
-    static func arrow(from start: CGPoint, to end: CGPoint, tailWidth: CGFloat, headWidth: CGFloat, headLength: CGFloat) -> UIBezierPath {
-        let length = hypot(end.x - start.x, end.y - start.y)
-        let tailLength = length - headLength
-        
-        func p(_ x: CGFloat, _ y: CGFloat) -> CGPoint { return CGPoint(x: x, y: y) }
-        let points: [CGPoint] = [
-            p(0, tailWidth / 2),
-            p(tailLength, tailWidth / 2),
-            p(tailLength, headWidth / 2),
-            p(length, 0),
-            p(tailLength, -headWidth / 2),
-            p(tailLength, -tailWidth / 2),
-            p(0, -tailWidth / 2)
-        ]
-        
-        let cosine = (end.x - start.x) / length
-        let sine = (end.y - start.y) / length
-        let transform = CGAffineTransform(a: cosine, b: sine, c: -sine, d: cosine, tx: start.x, ty: start.y)
-        
-        let path = CGMutablePath()
-        path.addLines(between: points, transform: transform)
-        path.closeSubpath()
-        
-        return self.init(cgPath: path)
-    }
-    
-}

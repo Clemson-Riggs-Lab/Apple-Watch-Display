@@ -1,4 +1,1 @@
-Name	Room	EventType	EventData
-Smith	OR 1	NBP	100/60
-Smith	OR 1	SpO2	91%
-Smith	OR 1	CO2	35
+Name	Room	EventType	EventDataSmith	OR 1	NBP	100/60Smith	OR 1	SpO2	91%Smith	OR 1	CO2	35Smith	OR 1	NBP	100/70Smith	OR 1	SpO2	81%Smith	OR 1	CO2	21Smith	OR 1	NBP	100/50Smith	OR 1	SpO2	95%Smith	OR 1	CO2	30

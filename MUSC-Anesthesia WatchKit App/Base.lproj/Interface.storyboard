@@ -29,13 +29,15 @@
                                 <label width="76" height="42" alignment="left" verticalAlignment="bottom" text="Data" textAlignment="left" id="V76-FA-H8J" propertyAccessControl="none">
                                     <fontDescription key="font" type="system" pointSize="39"/>
                                 </label>
-                                <imageView width="52" height="65" alignment="left" id="g7S-YY-8up"/>
+                                <label width="53" height="71" alignment="left" text="Label" textAlignment="center" id="Q4P-QJ-M7Z">
+                                    <fontDescription key="font" type="system" pointSize="21"/>
+                                </label>
                             </items>
                         </group>
                     </items>
                     <connections>
                         <outlet property="Data" destination="V76-FA-H8J" id="Qf2-IY-Y07"/>
-                        <outlet property="DirectionArrow" destination="g7S-YY-8up" id="COw-Pd-4bc"/>
+                        <outlet property="DirectionArrow" destination="Q4P-QJ-M7Z" id="A32-UE-nIR"/>
                         <outlet property="Et" destination="ljA-5Y-2ua" id="DqH-lp-hNL"/>
                         <outlet property="MedicalIssue" destination="gTO-zC-94e" id="aRI-eV-o9k"/>
                         <outlet property="NameRoom" destination="gkf-ky-RUU" id="K6t-oE-xSg"/>
