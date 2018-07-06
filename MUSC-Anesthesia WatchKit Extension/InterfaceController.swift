@@ -52,6 +52,7 @@ class InterfaceController: WKInterfaceController {
         MedicalIssue.setTextColor(UIColor.black)
         Data.setTextColor(UIColor.black)
         Et.setTextColor(UIColor.black)
+        DirectionArrow.setTextColor(UIColor.black)
 
         txtData = readTXTIntoArray(file: fileName)
         assignLables()
@@ -105,6 +106,7 @@ class InterfaceController: WKInterfaceController {
     
     @objc func enableDisplay() {
         Et.setTextColor(UIColor.black)
+        DirectionArrow.setTextColor(UIColor.black)
 
         currentPatientIssue = patientIssue[i]
         currentData = patientData[i]
@@ -137,8 +139,9 @@ class InterfaceController: WKInterfaceController {
         case "CO2":
             specifiedIssue = patientIssue[i]
             
-            CO2Data.append(patientIssue[i])
+            CO2Data.append(patientData[i])
             if(CO2Data.count >= 2) {
+                
                 prevData = CO2Data[CO2Data.count - 2]
             }
             else {
@@ -198,6 +201,7 @@ class InterfaceController: WKInterfaceController {
         Data.setText(patientData[i])
         
         DirectionArrow.setTextColor(UIColor.white)
+        
         checkPatient()
     }
     
@@ -207,7 +211,7 @@ class InterfaceController: WKInterfaceController {
             if ( currentPatientIssue == specifiedIssue ) {
                 
                 let prevDataInt:Int? = Int(prevData)
-                let currentDataInt:Int? = Int(patientData[i])
+                let currentDataInt:Int? = Int(currentData)
                 
                 if (prevDataInt == currentDataInt) {
                     // Display nothing
