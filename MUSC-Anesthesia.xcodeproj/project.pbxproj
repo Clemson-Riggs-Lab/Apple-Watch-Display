@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D09291C20E54BDB00AC852B /* patients.csv in Resources */ = {isa = PBXBuildFile; fileRef = 8D09291B20E54BDA00AC852B /* patients.csv */; };
 		8DD8A78B20E6BA3500BA8EA2 /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8DD8A78A20E6BA3500BA8EA2 /* Base.lproj */; };
 		8DD8A78D20EA81C000BA8EA2 /* patients.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8DD8A78C20EA81BF00BA8EA2 /* patients.txt */; };
 		8DE9803420D984B500CDA43E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9803320D984B500CDA43E /* AppDelegate.swift */; };
@@ -84,7 +83,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		8D09291B20E54BDA00AC852B /* patients.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = patients.csv; sourceTree = "<group>"; };
 		8DD8A78A20E6BA3500BA8EA2 /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		8DD8A78C20EA81BF00BA8EA2 /* patients.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = patients.txt; sourceTree = "<group>"; };
 		8DE9803020D984B500CDA43E /* MUSC-Anesthesia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MUSC-Anesthesia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,7 +220,6 @@
 			isa = PBXGroup;
 			children = (
 				8DD8A78C20EA81BF00BA8EA2 /* patients.txt */,
-				8D09291B20E54BDA00AC852B /* patients.csv */,
 				8DE9806C20D984C000CDA43E /* InterfaceController.swift */,
 				8DE9806E20D984C000CDA43E /* ExtensionDelegate.swift */,
 				8DE9807020D984C000CDA43E /* NotificationController.swift */,
@@ -418,7 +415,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DD8A78D20EA81C000BA8EA2 /* patients.txt in Resources */,
-				8D09291C20E54BDB00AC852B /* patients.csv in Resources */,
 				8DE9807320D984C600CDA43E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

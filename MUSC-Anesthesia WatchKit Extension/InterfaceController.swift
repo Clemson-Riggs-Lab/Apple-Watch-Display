@@ -15,7 +15,6 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var Data: WKInterfaceLabel!
     @IBOutlet var Et: WKInterfaceLabel!
     @IBOutlet var DirectionArrow: WKInterfaceLabel!
-
     @IBOutlet var underline: WKInterfaceSeparator!
     
     var txtData: [String]?
@@ -23,14 +22,14 @@ class InterfaceController: WKInterfaceController {
     var patientIssue = [String]()
     var patientData = [String]()
     
+    var NBPData = [String]()
+    var SpO2Data = [String]()
+    var CO2Data = [String]()
+    
     var currentPatientIssue = String()
     var specifiedIssue = String()
     var currentData = String()
     var prevData = String()
-
-    var NBPData = [String]()
-    var SpO2Data = [String]()
-    var CO2Data = [String]()
     
     var rows = Int()
     var i = 0
@@ -107,7 +106,7 @@ class InterfaceController: WKInterfaceController {
     @objc func enableDisplay() {
         Et.setTextColor(UIColor.black)
         DirectionArrow.setTextColor(UIColor.black)
-
+        
         currentPatientIssue = patientIssue[i]
         currentData = patientData[i]
         
@@ -134,6 +133,9 @@ class InterfaceController: WKInterfaceController {
             else {
                 prevData = currentData
             }
+            
+            prevData = prevData.replacingOccurrences(of: "%", with: "")
+            currentData = currentData.replacingOccurrences(of: "%", with: "")
             
             displaySP02()
         case "CO2":
@@ -185,6 +187,7 @@ class InterfaceController: WKInterfaceController {
         Data.setText(patientData[i])
         
         DirectionArrow.setTextColor(UIColor.cyan)
+        checkPatient()
     }
     
     func displayCO2() {
@@ -201,15 +204,16 @@ class InterfaceController: WKInterfaceController {
         Data.setText(patientData[i])
         
         DirectionArrow.setTextColor(UIColor.white)
-        
-        checkPatient()
+//        checkPatient()
     }
     
     func checkPatient() {
+        let slightdrop = 10
+        let majordrop = 15
         
         if(i > 0) {
             if ( currentPatientIssue == specifiedIssue ) {
-                
+
                 let prevDataInt:Int? = Int(prevData)
                 let currentDataInt:Int? = Int(currentData)
                 
@@ -218,12 +222,34 @@ class InterfaceController: WKInterfaceController {
                     DirectionArrow.setText(" ")
                 }
                 else if (prevDataInt! > currentDataInt!) {
-                    // Display Down Arrow
-                    DirectionArrow.setText("\u{2193}")
+                    
+                    if( (prevDataInt! - currentDataInt!) >= slightdrop) {
+                        // 45 Single Down Arow
+                        DirectionArrow.setText("\u{2198}")
+                        if( (prevDataInt! - currentDataInt!) >= majordrop) {
+                            // 45 Double Down Arrow
+                            DirectionArrow.setText("\u{21D8}")
+                        }
+                    }
+                    else {
+                        // Vertical Down Arrow
+                        DirectionArrow.setText("\u{2193}")
+                    }
                 }
                 else if (prevDataInt! < currentDataInt!) {
-                    // Display Up Arrow
-                    DirectionArrow.setText("\u{2191}")
+                    
+                    if( (prevDataInt! - currentDataInt!) <= slightdrop) {
+                        // 45 Single Up Arow
+                        DirectionArrow.setText("\u{2196}")
+                        if( (prevDataInt! - currentDataInt!) <= majordrop) {
+                            // 45 Double Up Arrow
+                            DirectionArrow.setText("\u{21D7}")
+                        }
+                    }
+                    else {
+                        // Display Up Arrow
+                        DirectionArrow.setText("\u{2191}")
+                    }
                 }
             }
         }
@@ -236,4 +262,3 @@ class InterfaceController: WKInterfaceController {
     }
     
 }
-
