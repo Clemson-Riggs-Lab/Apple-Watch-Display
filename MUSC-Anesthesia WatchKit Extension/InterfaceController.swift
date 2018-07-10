@@ -10,6 +10,8 @@ import WatchKit
 import Foundation
 
 class InterfaceController: WKInterfaceController {
+    
+    // Display Labels
     @IBOutlet var NameRoom: WKInterfaceLabel!
     @IBOutlet var MedicalIssue: WKInterfaceLabel!
     @IBOutlet var Data: WKInterfaceLabel!
@@ -17,25 +19,33 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var DirectionArrow: WKInterfaceLabel!
     @IBOutlet var underline: WKInterfaceSeparator!
     
+    // Variables used to store data from Txt/CSV file
     var txtData: [String]?
     var patientNameRoom = [String]()
     var patientIssue = [String]()
     var patientData = [String]()
-    
     var NBPData = [String]()
     var SpO2Data = [String]()
     var CO2Data = [String]()
     
+    // Variables used to temporarily hold data that should be compared
     var currentPatientIssue = String()
     var specifiedIssue = String()
     var currentData = String()
     var prevData = String()
     
+    // Variable to store data strings as integers
+    var prevDataInt = Int()
+    var currentDataInt = Int()
+    
+    // Iterate through data
     var rows = Int()
     var i = 0
     
+    // Name of file
     let fileName: String = "patients"
     
+    // Txt/CSV Columns
     let nameCol = 0
     let roomCol = 1
     let issueCol = 2
@@ -46,6 +56,7 @@ class InterfaceController: WKInterfaceController {
         // Configure interface objects here.
         super.awake(withContext: context)
 
+        // Black out display labels
         NameRoom.setTextColor(UIColor.black)
         underline.setColor(UIColor.black)
         MedicalIssue.setTextColor(UIColor.black)
@@ -53,9 +64,11 @@ class InterfaceController: WKInterfaceController {
         Et.setTextColor(UIColor.black)
         DirectionArrow.setTextColor(UIColor.black)
 
+        // Read txt file and assign data
         txtData = readTXTIntoArray(file: fileName)
         assignLables()
 
+        // Start Timer
         _ = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(enableDisplay), userInfo: nil, repeats: true)
     }
     
@@ -106,6 +119,7 @@ class InterfaceController: WKInterfaceController {
     @objc func enableDisplay() {
         Et.setTextColor(UIColor.black)
         DirectionArrow.setTextColor(UIColor.black)
+        DirectionArrow.setTextColor(UIColor.black)
         
         currentPatientIssue = patientIssue[i]
         currentData = patientData[i]
@@ -115,40 +129,22 @@ class InterfaceController: WKInterfaceController {
             specifiedIssue = patientIssue[i]
             
             NBPData.append(patientData[i])
-            if(NBPData.count >= 2) {
-                prevData = NBPData[NBPData.count - 2]
-            }
-            else {
-                prevData = currentData
-            }
             
             displayBP()
         case "SpO2":
             specifiedIssue = patientIssue[i]
             
             SpO2Data.append(patientData[i])
-            if(SpO2Data.count >= 2) {
-                prevData = SpO2Data[SpO2Data.count - 2]
-            }
-            else {
-                prevData = currentData
-            }
             
-            prevData = prevData.replacingOccurrences(of: "%", with: "")
             currentData = currentData.replacingOccurrences(of: "%", with: "")
+            currentDataInt = Int(currentData)!
             
             displaySP02()
         case "CO2":
             specifiedIssue = patientIssue[i]
             
             CO2Data.append(patientData[i])
-            if(CO2Data.count >= 2) {
-                
-                prevData = CO2Data[CO2Data.count - 2]
-            }
-            else {
-                prevData = currentData
-            }
+            currentDataInt = Int(currentData)!
             
             displayCO2()
         default:
@@ -170,11 +166,17 @@ class InterfaceController: WKInterfaceController {
         
         Data.setTextColor(UIColor.magenta)
         Data.setText(patientData[i])
+
+//        DirectionArrow.setTextColor(UIColor.magenta)
         
-        DirectionArrow.setTextColor(UIColor.magenta)
     }
     
     func displaySP02() {
+        let standardSpO2 = 95
+        let smalldrop = 5
+        let slightdrop = 10
+        let majordrop = 15
+        
         NameRoom.setTextColor(UIColor.cyan)
         NameRoom.setText(patientNameRoom[i])
         
@@ -187,10 +189,39 @@ class InterfaceController: WKInterfaceController {
         Data.setText(patientData[i])
         
         DirectionArrow.setTextColor(UIColor.cyan)
-        checkPatient()
+        
+        if(standardSpO2 > currentDataInt) {
+            if(standardSpO2 - currentDataInt >= smalldrop) {
+                // Vertical Down Arrow
+                DirectionArrow.setText("\u{2193}")
+                
+                if(standardSpO2 - currentDataInt >= slightdrop) {
+                    // 45 Single Down Arow
+                    DirectionArrow.setText("\u{2198}")
+                    
+                    if(standardSpO2 - currentDataInt >= majordrop) {
+                        // 45 Double Down Arrow
+                        DirectionArrow.setText("\u{21CA}")
+                    }
+                }
+            }
+        }
+        else if(standardSpO2 < currentDataInt) {
+            // Vertical Up Arrow
+            DirectionArrow.setText("\u{2191}")
+        }
+        else {
+            DirectionArrow.setText(" ")
+        }
+        
     }
     
     func displayCO2() {
+        let standardEtCO2 = 35
+        let smalldrop = 5
+        let slightdrop = 10
+        let majordrop = 15
+        
         NameRoom.setTextColor(UIColor.white)
         NameRoom.setText(patientNameRoom[i])
         
@@ -204,57 +235,33 @@ class InterfaceController: WKInterfaceController {
         Data.setText(patientData[i])
         
         DirectionArrow.setTextColor(UIColor.white)
-//        checkPatient()
-    }
-    
-    func checkPatient() {
-        let slightdrop = 10
-        let majordrop = 15
         
-        if(i > 0) {
-            if ( currentPatientIssue == specifiedIssue ) {
-
-                let prevDataInt:Int? = Int(prevData)
-                let currentDataInt:Int? = Int(currentData)
+        if(standardEtCO2 > currentDataInt) {
+            if(standardEtCO2 - currentDataInt >= smalldrop) {
+                // Vertical Down Arrow
+                DirectionArrow.setText("\u{2193}")
                 
-                if (prevDataInt == currentDataInt) {
-                    // Display nothing
-                    DirectionArrow.setText(" ")
-                }
-                else if (prevDataInt! > currentDataInt!) {
+                if(standardEtCO2 - currentDataInt >= slightdrop) {
+                    // 45 Single Down Arow
+                    DirectionArrow.setText("\u{2198}")
                     
-                    if( (prevDataInt! - currentDataInt!) >= slightdrop) {
-                        // 45 Single Down Arow
-                        DirectionArrow.setText("\u{2198}")
-                        if( (prevDataInt! - currentDataInt!) >= majordrop) {
-                            // 45 Double Down Arrow
-                            DirectionArrow.setText("\u{21D8}")
-                        }
-                    }
-                    else {
-                        // Vertical Down Arrow
-                        DirectionArrow.setText("\u{2193}")
-                    }
-                }
-                else if (prevDataInt! < currentDataInt!) {
-                    
-                    if( (prevDataInt! - currentDataInt!) <= slightdrop) {
-                        // 45 Single Up Arow
-                        DirectionArrow.setText("\u{2196}")
-                        if( (prevDataInt! - currentDataInt!) <= majordrop) {
-                            // 45 Double Up Arrow
-                            DirectionArrow.setText("\u{21D7}")
-                        }
-                    }
-                    else {
-                        // Display Up Arrow
-                        DirectionArrow.setText("\u{2191}")
+                    if(standardEtCO2 - currentDataInt >= majordrop) {
+                        // 45 Double Down Arrow
+                        DirectionArrow.setText("\u{21CA}")
                     }
                 }
             }
         }
+        else if(standardEtCO2 < currentDataInt) {
+            // Vertical Up Arrow
+            DirectionArrow.setText("\u{2191}")
+        }
+        else {
+            DirectionArrow.setText(" ")
+        }
+        
     }
-    
+
     func checkIterator() {
         if(i >= rows) {
             i = 0

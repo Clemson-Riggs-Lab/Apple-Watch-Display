@@ -14,7 +14,7 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="MUSC_Anesthesia_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label width="136" height="32" alignment="left" text="Name - Room #" textAlignment="center" id="gkf-ky-RUU">
+                        <label width="136" height="29" alignment="left" text="Name - Room" textAlignment="center" id="gkf-ky-RUU">
                             <fontDescription key="font" type="system" pointSize="22"/>
                         </label>
                         <separator width="136" alignment="left" id="vay-G6-k02"/>
@@ -26,11 +26,11 @@
                         </label>
                         <group width="136" height="65" alignment="left" verticalAlignment="bottom" radius="6" spacing="2" id="tVh-Y7-bpf">
                             <items>
-                                <label width="97" height="42" alignment="left" verticalAlignment="bottom" text="Data" textAlignment="left" id="V76-FA-H8J" propertyAccessControl="none">
-                                    <fontDescription key="font" type="system" pointSize="33"/>
+                                <label width="96" height="42" alignment="left" verticalAlignment="bottom" text="Data" textAlignment="left" id="V76-FA-H8J" propertyAccessControl="none">
+                                    <fontDescription key="font" type="system" pointSize="32"/>
                                 </label>
-                                <label width="38" height="66" alignment="right" text="-" textAlignment="left" minimumScaleFactor="0.0" id="Q4P-QJ-M7Z">
-                                    <fontDescription key="font" type="system" pointSize="60"/>
+                                <label width="45" height="66" alignment="right" text="-" textAlignment="left" minimumScaleFactor="0.0" id="Q4P-QJ-M7Z">
+                                    <fontDescription key="font" type="system" pointSize="50"/>
                                 </label>
                             </items>
                         </group>
@@ -45,7 +45,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="326"/>
+            <point key="canvasLocation" x="220" y="324.5"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">
