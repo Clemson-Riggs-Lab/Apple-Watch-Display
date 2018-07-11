@@ -18,18 +18,18 @@
                             <fontDescription key="font" type="system" pointSize="22"/>
                         </label>
                         <separator width="136" alignment="left" id="vay-G6-k02"/>
-                        <label width="126" height="28" alignment="left" verticalAlignment="bottom" text="Medical Issue" textAlignment="left" id="gTO-zC-94e">
-                            <fontDescription key="font" type="system" pointSize="20"/>
+                        <label width="128" height="26" alignment="left" verticalAlignment="bottom" text="Medical Issue" textAlignment="left" id="gTO-zC-94e">
+                            <fontDescription key="font" type="system" pointSize="23"/>
                         </label>
-                        <label width="20" height="14" alignment="left" verticalAlignment="bottom" text="Et" id="ljA-5Y-2ua">
-                            <fontDescription key="font" type="system" pointSize="20"/>
+                        <label width="44" height="22" alignment="left" verticalAlignment="bottom" text="Et" id="ljA-5Y-2ua">
+                            <fontDescription key="font" type="system" pointSize="23"/>
                         </label>
-                        <group width="136" height="65" alignment="left" verticalAlignment="bottom" radius="6" spacing="2" id="tVh-Y7-bpf">
+                        <group width="136" height="48" alignment="left" verticalAlignment="bottom" radius="6" spacing="2" id="tVh-Y7-bpf">
                             <items>
-                                <label width="96" height="42" alignment="left" verticalAlignment="bottom" text="Data" textAlignment="left" id="V76-FA-H8J" propertyAccessControl="none">
-                                    <fontDescription key="font" type="system" pointSize="32"/>
+                                <label height="44" alignment="left" verticalAlignment="bottom" text="Data" textAlignment="left" id="V76-FA-H8J" propertyAccessControl="none">
+                                    <fontDescription key="font" type="system" pointSize="33"/>
                                 </label>
-                                <label width="45" height="66" alignment="right" text="-" textAlignment="left" minimumScaleFactor="0.0" id="Q4P-QJ-M7Z">
+                                <label width="38" height="52" alignment="right" text="-" textAlignment="left" minimumScaleFactor="0.0" id="Q4P-QJ-M7Z">
                                     <fontDescription key="font" type="system" pointSize="50"/>
                                 </label>
                             </items>
@@ -45,7 +45,7 @@
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="324.5"/>
+            <point key="canvasLocation" x="220" y="323"/>
         </scene>
         <!--Static Notification Interface Controller-->
         <scene sceneID="AEw-b0-oYE">

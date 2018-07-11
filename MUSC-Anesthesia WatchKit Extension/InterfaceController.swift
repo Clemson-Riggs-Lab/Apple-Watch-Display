@@ -30,7 +30,6 @@ class InterfaceController: WKInterfaceController {
     
     // Variables used to temporarily hold data that should be compared
     var currentPatientIssue = String()
-    var specifiedIssue = String()
     var currentData = String()
     var prevData = String()
     
@@ -56,14 +55,9 @@ class InterfaceController: WKInterfaceController {
         // Configure interface objects here.
         super.awake(withContext: context)
 
-        // Black out display labels
-        NameRoom.setTextColor(UIColor.black)
-        underline.setColor(UIColor.black)
-        MedicalIssue.setTextColor(UIColor.black)
-        Data.setTextColor(UIColor.black)
-        Et.setTextColor(UIColor.black)
-        DirectionArrow.setTextColor(UIColor.black)
-
+        // Format interface
+        formatDisplay()
+        
         // Read txt file and assign data
         txtData = readTXTIntoArray(file: fileName)
         assignLables()
@@ -116,9 +110,29 @@ class InterfaceController: WKInterfaceController {
         }
     }
     
-    @objc func enableDisplay() {
+    func formatDisplay() {
+        // Black out display labels
+        NameRoom.setTextColor(UIColor.black)
+        underline.setColor(UIColor.black)
+        MedicalIssue.setTextColor(UIColor.black)
+        Data.setTextColor(UIColor.black)
         Et.setTextColor(UIColor.black)
         DirectionArrow.setTextColor(UIColor.black)
+        
+        // Configure bold font
+        let bold = NSMutableAttributedString(string: "Arial Bold (Code)")
+        if let arialBoldFont = UIFont(name: "Arial-Bold", size: 35) {
+            bold.addAttribute(NSAttributedStringKey.font,value: arialBoldFont, range: NSMakeRange(0, 21))
+        }
+        
+        // Add bold font to labels
+        MedicalIssue.setAttributedText(bold)
+        Et.setAttributedText(bold)
+        Data.setAttributedText(bold)
+    }
+    
+    @objc func enableDisplay() {
+        Et.setTextColor(UIColor.black)
         DirectionArrow.setTextColor(UIColor.black)
         
         currentPatientIssue = patientIssue[i]
@@ -126,24 +140,20 @@ class InterfaceController: WKInterfaceController {
         
         switch(currentPatientIssue) {
         case "NBP":
-            specifiedIssue = patientIssue[i]
-            
             NBPData.append(patientData[i])
             
             displayBP()
         case "SpO2":
-            specifiedIssue = patientIssue[i]
-            
             SpO2Data.append(patientData[i])
             
+            // Get rid of % sign
             currentData = currentData.replacingOccurrences(of: "%", with: "")
             currentDataInt = Int(currentData)!
             
             displaySP02()
         case "CO2":
-            specifiedIssue = patientIssue[i]
-            
             CO2Data.append(patientData[i])
+            
             currentDataInt = Int(currentData)!
             
             displayCO2()
@@ -168,7 +178,6 @@ class InterfaceController: WKInterfaceController {
         Data.setText(patientData[i])
 
 //        DirectionArrow.setTextColor(UIColor.magenta)
-        
     }
     
     func displaySP02() {
@@ -213,7 +222,6 @@ class InterfaceController: WKInterfaceController {
         else {
             DirectionArrow.setText(" ")
         }
-        
     }
     
     func displayCO2() {
@@ -229,7 +237,9 @@ class InterfaceController: WKInterfaceController {
         
         MedicalIssue.setTextColor(UIColor.white)
         MedicalIssue.setText("CO2 mm Hg")
+        
         Et.setTextColor(UIColor.white)
+        Et.setText("Et")
         
         Data.setTextColor(UIColor.white)
         Data.setText(patientData[i])
