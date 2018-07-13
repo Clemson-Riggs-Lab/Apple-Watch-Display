@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:MUSC-Anesthesia WatchKit Extension/patients.txt">
+   </FileRef>
+   <FileRef
       location = "group:MUSC-Anesthesia.xcodeproj">
    </FileRef>
 </Workspace>

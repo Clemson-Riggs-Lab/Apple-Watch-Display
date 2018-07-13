@@ -24,9 +24,11 @@ class InterfaceController: WKInterfaceController {
     var patientNameRoom = [String]()
     var patientIssue = [String]()
     var patientData = [String]()
+    var arrowTxt = [String]()
     var NBPData = [String]()
     var SpO2Data = [String]()
     var CO2Data = [String]()
+
     
     // Variables used to temporarily hold data that should be compared
     var currentPatientIssue = String()
@@ -49,7 +51,8 @@ class InterfaceController: WKInterfaceController {
     let roomCol = 1
     let issueCol = 2
     let dataCol = 3
-    let numCols = 4
+    let arrowCol = 4
+    let numCols = 5
     
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
@@ -87,7 +90,7 @@ class InterfaceController: WKInterfaceController {
             // Filter array
             var contentsFiltered = content.components(separatedBy: ["\n", ",", "\t", "\r"])
             contentsFiltered = contentsFiltered.filter({$0 != ""})
-            
+
             for _ in 0..<numCols  {
                 contentsFiltered.removeFirst()
             }
@@ -105,6 +108,7 @@ class InterfaceController: WKInterfaceController {
             patientNameRoom.append((txtData?[index + nameCol])! + " - " + (txtData?[index + roomCol])!)
             patientIssue.append((txtData?[index + issueCol])!)
             patientData.append((txtData?[index + dataCol])!)
+            arrowTxt.append((txtData?[index + arrowCol])!)
             
             index += numCols
         }
@@ -177,15 +181,12 @@ class InterfaceController: WKInterfaceController {
         Data.setTextColor(UIColor.magenta)
         Data.setText(patientData[i])
 
-//        DirectionArrow.setTextColor(UIColor.magenta)
+        DirectionArrow.setTextColor(UIColor.magenta)
+        DirectionArrow.setText(String(UnicodeScalar(Int(arrowTxt[i], radix: 16)!)!))
+        vibrationEffect()
     }
     
     func displaySP02() {
-        let standardSpO2 = 95
-        let smalldrop = 5
-        let slightdrop = 10
-        let majordrop = 15
-        
         NameRoom.setTextColor(UIColor.cyan)
         NameRoom.setText(patientNameRoom[i])
         
@@ -198,21 +199,29 @@ class InterfaceController: WKInterfaceController {
         Data.setText(patientData[i])
         
         DirectionArrow.setTextColor(UIColor.cyan)
-        
+        DirectionArrow.setText(String(UnicodeScalar(Int(arrowTxt[i], radix: 16)!)!))
+        vibrationEffect()
+/*
+        let standardSpO2 = 95
+        let smalldrop = 5
+        let slightdrop = 10
+        let majordrop = 15
+         
         if(standardSpO2 > currentDataInt) {
-            if(standardSpO2 - currentDataInt >= smalldrop) {
+            if(standardSpO2 - currentDataInt >= majordrop) {
+                // 45 Double Down Arrow
+                DirectionArrow.setText("\u{21CA}")
+                WKInterfaceDevice.current().play(.notification)
+            }
+            else if(standardSpO2 - currentDataInt >= slightdrop) {
+                // 45 Single Down Arow
+                DirectionArrow.setText("\u{2198}")
+                WKInterfaceDevice.current().play(.stop)
+            }
+            else if(standardSpO2 - currentDataInt >= smalldrop) {
                 // Vertical Down Arrow
                 DirectionArrow.setText("\u{2193}")
-                
-                if(standardSpO2 - currentDataInt >= slightdrop) {
-                    // 45 Single Down Arow
-                    DirectionArrow.setText("\u{2198}")
-                    
-                    if(standardSpO2 - currentDataInt >= majordrop) {
-                        // 45 Double Down Arrow
-                        DirectionArrow.setText("\u{21CA}")
-                    }
-                }
+                WKInterfaceDevice.current().play(.directionDown)
             }
         }
         else if(standardSpO2 < currentDataInt) {
@@ -222,14 +231,10 @@ class InterfaceController: WKInterfaceController {
         else {
             DirectionArrow.setText(" ")
         }
+ */
     }
     
     func displayCO2() {
-        let standardEtCO2 = 35
-        let smalldrop = 5
-        let slightdrop = 10
-        let majordrop = 15
-        
         NameRoom.setTextColor(UIColor.white)
         NameRoom.setText(patientNameRoom[i])
         
@@ -245,21 +250,29 @@ class InterfaceController: WKInterfaceController {
         Data.setText(patientData[i])
         
         DirectionArrow.setTextColor(UIColor.white)
-        
+        DirectionArrow.setText(String(UnicodeScalar(Int(arrowTxt[i], radix: 16)!)!))
+        vibrationEffect()
+/*
+        let standardEtCO2 = 35
+        let smalldrop = 5
+        let slightdrop = 10
+        let majordrop = 15
+         
         if(standardEtCO2 > currentDataInt) {
-            if(standardEtCO2 - currentDataInt >= smalldrop) {
+            if(standardEtCO2 - currentDataInt >= majordrop) {
+                // 45 Double Down Arrow
+                DirectionArrow.setText("\u{21CA}")
+                WKInterfaceDevice.current().play(.notification)
+            }
+            else if(standardEtCO2 - currentDataInt >= slightdrop) {
+                // 45 Single Down Arow
+                DirectionArrow.setText("\u{2198}")
+                WKInterfaceDevice.current().play(.stop)
+            }
+            else if(standardEtCO2 - currentDataInt >= smalldrop) {
                 // Vertical Down Arrow
                 DirectionArrow.setText("\u{2193}")
-                
-                if(standardEtCO2 - currentDataInt >= slightdrop) {
-                    // 45 Single Down Arow
-                    DirectionArrow.setText("\u{2198}")
-                    
-                    if(standardEtCO2 - currentDataInt >= majordrop) {
-                        // 45 Double Down Arrow
-                        DirectionArrow.setText("\u{21CA}")
-                    }
-                }
+                WKInterfaceDevice.current().play(.directionDown)
             }
         }
         else if(standardEtCO2 < currentDataInt) {
@@ -269,7 +282,21 @@ class InterfaceController: WKInterfaceController {
         else {
             DirectionArrow.setText(" ")
         }
-        
+ */
+    }
+    
+    func vibrationEffect() {
+        switch(arrowTxt[i]) {
+        case "2193":
+            WKInterfaceDevice.current().play(.directionDown)
+        case "2198":
+            WKInterfaceDevice.current().play(.stop)
+        case "21CA":
+            WKInterfaceDevice.current().play(.notification)
+        default:
+            // FIXME: DONT FORGET TO CHANGE
+            print("Error in arrowTXT")
+        }
     }
 
     func checkIterator() {

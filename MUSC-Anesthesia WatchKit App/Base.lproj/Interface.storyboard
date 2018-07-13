@@ -27,9 +27,9 @@
                         <group width="136" height="48" alignment="left" verticalAlignment="bottom" radius="6" spacing="2" id="tVh-Y7-bpf">
                             <items>
                                 <label height="44" alignment="left" verticalAlignment="bottom" text="Data" textAlignment="left" id="V76-FA-H8J" propertyAccessControl="none">
-                                    <fontDescription key="font" type="system" pointSize="33"/>
+                                    <fontDescription key="font" type="system" pointSize="31"/>
                                 </label>
-                                <label width="38" height="52" alignment="right" text="-" textAlignment="left" minimumScaleFactor="0.0" id="Q4P-QJ-M7Z">
+                                <label width="34" height="52" alignment="right" text="-" textAlignment="left" minimumScaleFactor="0.0" id="Q4P-QJ-M7Z">
                                     <fontDescription key="font" type="system" pointSize="50"/>
                                 </label>
                             </items>
