@@ -33,25 +33,14 @@ class InterfaceController: WKInterfaceController {
     // Variables used to temporarily hold data that should be compared
     var currentPatientIssue = String()
     var currentData = String()
-    var prevData = String()
-    
-    // Variable to store data strings as integers
-    var prevDataInt = Int()
-    var currentDataInt = Int()
-    
+//    var prevData = String()
+
     // Iterate through data
     var rows = Int()
     var i = 0
     
-    // Name of file
+    // File Info
     let fileName: String = "patients"
-    
-    // Txt/CSV Columns
-    let nameCol = 0
-    let roomCol = 1
-    let issueCol = 2
-    let dataCol = 3
-    let arrowCol = 4
     let numCols = 5
     
     override func awake(withContext context: Any?) {
@@ -60,9 +49,12 @@ class InterfaceController: WKInterfaceController {
 
         // Format interface
         formatDisplay()
+        setFontToBold()
         
-        // Read txt file and assign data
+        // Read txt file
         txtData = readTXTIntoArray(file: fileName)
+        
+        // Assign Labels proper data
         assignLables()
 
         // Start Timer
@@ -103,6 +95,13 @@ class InterfaceController: WKInterfaceController {
     }
     
     func assignLables() {
+        // CSV-TXT Column Data
+        let nameCol = 0
+        let roomCol = 1
+        let issueCol = 2
+        let dataCol = 3
+        let arrowCol = 4
+        
         var index = 0
         while(index < (txtData?.count)!){
             patientNameRoom.append((txtData?[index + nameCol])! + " - " + (txtData?[index + roomCol])!)
@@ -122,7 +121,9 @@ class InterfaceController: WKInterfaceController {
         Data.setTextColor(UIColor.black)
         Et.setTextColor(UIColor.black)
         DirectionArrow.setTextColor(UIColor.black)
-        
+    }
+    
+    func setFontToBold() {
         // Configure bold font
         let bold = NSMutableAttributedString(string: "Arial Bold (Code)")
         if let arialBoldFont = UIFont(name: "Arial-Bold", size: 35) {
@@ -136,8 +137,11 @@ class InterfaceController: WKInterfaceController {
     }
     
     @objc func enableDisplay() {
-        Et.setTextColor(UIColor.black)
-        DirectionArrow.setTextColor(UIColor.black)
+        // Variable to store data strings as integers
+//        var currentDataInt = Int()
+        
+//        Et.setTextColor(UIColor.black)
+//        DirectionArrow.setTextColor(UIColor.black)
         
         currentPatientIssue = patientIssue[i]
         currentData = patientData[i]
@@ -145,21 +149,18 @@ class InterfaceController: WKInterfaceController {
         switch(currentPatientIssue) {
         case "NBP":
             NBPData.append(patientData[i])
-            
             displayBP()
         case "SpO2":
             SpO2Data.append(patientData[i])
-            
+        
             // Get rid of % sign
             currentData = currentData.replacingOccurrences(of: "%", with: "")
-            currentDataInt = Int(currentData)!
+//            currentDataInt = Int(currentData)!
             
             displaySP02()
         case "CO2":
             CO2Data.append(patientData[i])
-            
-            currentDataInt = Int(currentData)!
-            
+//            currentDataInt = Int(currentData)!
             displayCO2()
         default:
             print(patientIssue[i])
@@ -168,7 +169,7 @@ class InterfaceController: WKInterfaceController {
         i += 1
         checkIterator()
     }
-   
+    
     func displayBP() {
         NameRoom.setTextColor(UIColor.magenta)
         NameRoom.setText(patientNameRoom[i])
@@ -201,8 +202,8 @@ class InterfaceController: WKInterfaceController {
         DirectionArrow.setTextColor(UIColor.cyan)
         DirectionArrow.setText(String(UnicodeScalar(Int(arrowTxt[i], radix: 16)!)!))
         vibrationEffect()
-/*
-        let standardSpO2 = 95
+        
+/*      let standardSpO2 = 95
         let smalldrop = 5
         let slightdrop = 10
         let majordrop = 15
@@ -231,7 +232,7 @@ class InterfaceController: WKInterfaceController {
         else {
             DirectionArrow.setText(" ")
         }
- */
+*/
     }
     
     func displayCO2() {
