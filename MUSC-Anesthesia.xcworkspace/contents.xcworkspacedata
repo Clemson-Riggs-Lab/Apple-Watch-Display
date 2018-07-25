@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/kyliegomes/Desktop/MUSC-Apple-Watch-Display/MUSC-Anesthesia WatchKit Extension/StartView.swift">
+   </FileRef>
+   <FileRef
       location = "group:MUSC-Anesthesia WatchKit Extension/patients.txt">
    </FileRef>
    <FileRef

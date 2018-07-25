@@ -151,6 +151,7 @@ class InterfaceController: WKInterfaceController {
             default:
                 print(patientIssue[i])
         }
+
         displayInterface(interfaceColor: color)
 
         i += 1

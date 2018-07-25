@@ -47,28 +47,25 @@
             </objects>
             <point key="canvasLocation" x="220" y="323"/>
         </scene>
-        <!--Static Notification Interface Controller-->
-        <scene sceneID="AEw-b0-oYE">
+        <!--Start View-->
+        <scene sceneID="fws-lQ-XHE">
             <objects>
-                <notificationController id="YCC-NB-fut">
+                <controller id="Vas-hJ-9Ep" customClass="StartView" customModule="MUSC_Anesthesia_WatchKit_Extension">
                     <items>
-                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                        <picker height="62" alignment="left" verticalAlignment="center" id="yPf-4A-VgI"/>
+                        <button width="1" alignment="left" verticalAlignment="center" title="Start" id="Bc0-CG-7EB">
+                            <connections>
+                                <action selector="Start" destination="Vas-hJ-9Ep" id="ZDQ-Q2-xnw"/>
+                                <segue destination="AgC-eL-Hgc" kind="push" id="22R-uN-FdX"/>
+                            </connections>
+                        </button>
                     </items>
-                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
                     <connections>
-                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
-                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <outlet property="InputFiles" destination="yPf-4A-VgI" id="6WL-gp-AVv"/>
                     </connections>
-                </notificationController>
+                </controller>
             </objects>
-            <point key="canvasLocation" x="220" y="643"/>
-        </scene>
-        <!--Notification Controller-->
-        <scene sceneID="ZPc-GJ-vnh">
-            <objects>
-                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="MUSC_Anesthesia_WatchKit_App" customModuleProvider="target"/>
-            </objects>
-            <point key="canvasLocation" x="468" y="643"/>
+            <point key="canvasLocation" x="468" y="323"/>
         </scene>
     </scenes>
 </document>
