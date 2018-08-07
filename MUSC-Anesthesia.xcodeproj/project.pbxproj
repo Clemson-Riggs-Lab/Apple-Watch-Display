@@ -23,8 +23,10 @@
 		8DE9806F20D984C000CDA43E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9806E20D984C000CDA43E /* ExtensionDelegate.swift */; };
 		8DE9807120D984C000CDA43E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE9807020D984C000CDA43E /* NotificationController.swift */; };
 		8DE9807320D984C600CDA43E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE9807220D984C600CDA43E /* Assets.xcassets */; };
+		C81C77B1211A432A00111365 /* patients3.txt in Resources */ = {isa = PBXBuildFile; fileRef = C81C77AE211A432A00111365 /* patients3.txt */; };
+		C81C77B2211A432A00111365 /* patients1.txt in Resources */ = {isa = PBXBuildFile; fileRef = C81C77AF211A432A00111365 /* patients1.txt */; };
+		C81C77B3211A432A00111365 /* patients2.txt in Resources */ = {isa = PBXBuildFile; fileRef = C81C77B0211A432A00111365 /* patients2.txt */; };
 		C81D44592108CDEB00C1B195 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D44582108CDEB00C1B195 /* StartView.swift */; };
-		C865EAFD20F918DC00453FCE /* patients.txt in Resources */ = {isa = PBXBuildFile; fileRef = C865EAFC20F918DC00453FCE /* patients.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,8 +111,10 @@
 		8DE9807220D984C600CDA43E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DE9807420D984C600CDA43E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DE9807520D984C600CDA43E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		C81C77AE211A432A00111365 /* patients3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = patients3.txt; sourceTree = "<group>"; };
+		C81C77AF211A432A00111365 /* patients1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = patients1.txt; sourceTree = "<group>"; };
+		C81C77B0211A432A00111365 /* patients2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = patients2.txt; sourceTree = "<group>"; };
 		C81D44582108CDEB00C1B195 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StartView.swift; path = "/Users/kyliegomes/Desktop/MUSC-Apple-Watch-Display/MUSC-Anesthesia WatchKit Extension/StartView.swift"; sourceTree = "<absolute>"; };
-		C865EAFC20F918DC00453FCE /* patients.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = patients.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,7 +225,9 @@
 		8DE9806B20D984C000CDA43E /* MUSC-Anesthesia WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				C865EAFC20F918DC00453FCE /* patients.txt */,
+				C81C77AF211A432A00111365 /* patients1.txt */,
+				C81C77B0211A432A00111365 /* patients2.txt */,
+				C81C77AE211A432A00111365 /* patients3.txt */,
 				C81D44582108CDEB00C1B195 /* StartView.swift */,
 				8DE9806C20D984C000CDA43E /* InterfaceController.swift */,
 				8DE9806E20D984C000CDA43E /* ExtensionDelegate.swift */,
@@ -417,7 +423,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C865EAFD20F918DC00453FCE /* patients.txt in Resources */,
+				C81C77B2211A432A00111365 /* patients1.txt in Resources */,
+				C81C77B3211A432A00111365 /* patients2.txt in Resources */,
+				C81C77B1211A432A00111365 /* patients3.txt in Resources */,
 				8DE9807320D984C600CDA43E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

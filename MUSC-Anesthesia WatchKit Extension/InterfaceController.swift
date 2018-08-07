@@ -9,6 +9,9 @@
 import WatchKit
 import Foundation
 
+// let dispatchGoup = DispatchGroup()
+var fileRecieve = String()
+
 class InterfaceController: WKInterfaceController {
 
     // Display Labels
@@ -18,9 +21,9 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var Et: WKInterfaceLabel!
     @IBOutlet var DirectionArrow: WKInterfaceLabel!
     @IBOutlet var underline: WKInterfaceSeparator!
-
+    
     // File Info
-    let fileName: String = "patients"
+    var fileName: String = "patients"
     let numCols = 5
 
     // Variables used to store data from Txt/CSV file
@@ -37,31 +40,40 @@ class InterfaceController: WKInterfaceController {
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
         super.awake(withContext: context)
-
+        
         // Format interface
         formatDisplay()
 
+        // Find correct file
+        switch(fileRecieve) {
+            case "File 1":
+                fileName = "patients1"
+            case "File 2":
+                fileName = "patients2"
+            case "File 3":
+                fileName = "patients3"
+            default:
+                print(fileName)
+        }
+        
         // Read txt file and store its data
-        var data: [String]?
-        data = readTXTIntoArray(file: fileName)
+        let data = readTXTIntoArray(file: fileName)
+//        data = readTXTIntoArray(file: fileName)
 
         // Assign Labels proper data
         assignLables(txtData: data)
-
+        
         // Start Timer
         _ = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(enableDisplay), userInfo: nil, repeats: true)
     }
-
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
+/*
+    func run(after seconds: Int, completion: @escaping () -> Void) {
+        let deadline = DispatchTime.now() + .seconds(seconds)
+        DispatchQueue.main.asyncAfter(deadline: deadline) {
+            completion()
+        }
     }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
-
+*/
     func readTXTIntoArray(file: String) -> [String]? {
         guard let path = Bundle.main.path(forResource: fileName, ofType: "txt") else {
             return nil
