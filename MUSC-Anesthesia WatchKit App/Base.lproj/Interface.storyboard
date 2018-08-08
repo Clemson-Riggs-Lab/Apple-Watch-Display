@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="220" y="323"/>
         </scene>
-        <!--Start View-->
+        <!--StartView-->
         <scene sceneID="fws-lQ-XHE">
             <objects>
-                <controller id="Vas-hJ-9Ep" customClass="StartView" customModule="MUSC_Anesthesia_WatchKit_Extension">
+                <controller identifier="StartView" title="StartView" id="Vas-hJ-9Ep" customClass="StartView" customModule="MUSC_Anesthesia_WatchKit_Extension">
                     <items>
                         <picker height="54" alignment="left" verticalAlignment="center" id="yPf-4A-VgI">
                             <connections>

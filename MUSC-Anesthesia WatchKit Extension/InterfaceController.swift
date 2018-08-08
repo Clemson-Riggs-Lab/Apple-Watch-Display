@@ -9,6 +9,7 @@
 import WatchKit
 import Foundation
 
+// var thread = pthread_mutex_t()
 // let dispatchGoup = DispatchGroup()
 var fileRecieve = String()
 
@@ -22,11 +23,11 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var DirectionArrow: WKInterfaceLabel!
     @IBOutlet var underline: WKInterfaceSeparator!
     
-    // File Info
-    var fileName: String = "patients"
-    let numCols = 5
+    // Timer
+    var timer = Timer()
 
     // Variables used to store data from Txt/CSV file
+    var fileName = String()
     var currentPatientIssue = String()
     var patientNameRoom = [String]()
     var patientIssue = [String]()
@@ -35,12 +36,13 @@ class InterfaceController: WKInterfaceController {
 
     // Iterate through data
     var rows = Int()
+    let numCols = 5
     var i = 0
 
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
         super.awake(withContext: context)
-        
+
         // Format interface
         formatDisplay()
 
@@ -58,13 +60,12 @@ class InterfaceController: WKInterfaceController {
         
         // Read txt file and store its data
         let data = readTXTIntoArray(file: fileName)
-//        data = readTXTIntoArray(file: fileName)
 
         // Assign Labels proper data
         assignLables(txtData: data)
         
         // Start Timer
-        _ = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(enableDisplay), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(enableDisplay), userInfo: nil, repeats: true)
     }
 /*
     func run(after seconds: Int, completion: @escaping () -> Void) {
@@ -78,7 +79,6 @@ class InterfaceController: WKInterfaceController {
         guard let path = Bundle.main.path(forResource: fileName, ofType: "txt") else {
             return nil
         }
-
         do {
             let content = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
 
@@ -101,11 +101,7 @@ class InterfaceController: WKInterfaceController {
 
     func assignLables(txtData: [String]?) {
         // CSV-TXT Column Data
-        let nameCol = 0
-        let roomCol = 1
-        let issueCol = 2
-        let dataCol = 3
-        let arrowCol = 4
+        let nameCol = 0, roomCol = 1, issueCol = 2, dataCol = 3, arrowCol = 4
 
         var index = 0
         while(index < (txtData?.count)!) {
@@ -144,9 +140,7 @@ class InterfaceController: WKInterfaceController {
     }
 
     @objc func enableDisplay() {
-        var NBPData = [String]()
-        var SpO2Data = [String]()
-        var CO2Data = [String]()
+        var NBPData = [String](), SpO2Data = [String](), CO2Data = [String]()
         var color = UIColor()
 
         currentPatientIssue = patientIssue[i]
@@ -212,7 +206,15 @@ class InterfaceController: WKInterfaceController {
 
     func checkIterator() {
         if(i >= rows) {
-            i = 0
+            // Stop timer
+            timer.invalidate()
+            
+            // Black out screen
+            formatDisplay()
+            
+            // Change Interface
+            let rootControllerIdentifier = "StartView"
+            WKInterfaceController.reloadRootControllers(withNamesAndContexts: [(name: rootControllerIdentifier, context: [:] as AnyObject)])
         }
     }
 

@@ -1,15 +1,15 @@
 //
 //  StartView.swift
-//  
+//  MUSC-Anesthesia WatchKit Extension
 //
 //  Created by Nicolas Threatt on 7/25/18.
+//  Copyright © 2018 Riggs Lab. All rights reserved.
 //
 
-import Foundation
 import WatchKit
+import Foundation
 
 var start = 0
-var thread = pthread_mutex_t()
 
 class StartView: WKInterfaceController {
 
