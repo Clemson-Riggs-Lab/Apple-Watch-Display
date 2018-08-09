@@ -9,8 +9,6 @@
 import WatchKit
 import Foundation
 
-// var thread = pthread_mutex_t()
-// let dispatchGoup = DispatchGroup()
 var fileRecieve = String()
 
 class InterfaceController: WKInterfaceController {
@@ -22,23 +20,18 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var Et: WKInterfaceLabel!
     @IBOutlet var DirectionArrow: WKInterfaceLabel!
     @IBOutlet var underline: WKInterfaceSeparator!
-    
-    // Timer
-    var timer = Timer()
 
     // Variables used to store data from Txt/CSV file
-    var fileName = String()
+    var patientNameRoom = [String](), patientIssue = [String](), patientData = [String](), arrowTxt = [String]()
     var currentPatientIssue = String()
-    var patientNameRoom = [String]()
-    var patientIssue = [String]()
-    var patientData = [String]()
-    var arrowTxt = [String]()
+    var fileName = String()
+    let numCols = 6
 
     // Iterate through data
+    var time = [Int]()
     var rows = Int()
-    let numCols = 5
     var i = 0
-
+    
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
         super.awake(withContext: context)
@@ -57,24 +50,23 @@ class InterfaceController: WKInterfaceController {
             default:
                 print(fileName)
         }
-        
+
         // Read txt file and store its data
         let data = readTXTIntoArray(file: fileName)
 
         // Assign Labels proper data
         assignLables(txtData: data)
         
-        // Start Timer
-        timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(enableDisplay), userInfo: nil, repeats: true)
+        // Asynchronously show display
+        delay(seconds: Double(i))
     }
-/*
-    func run(after seconds: Int, completion: @escaping () -> Void) {
-        let deadline = DispatchTime.now() + .seconds(seconds)
-        DispatchQueue.main.asyncAfter(deadline: deadline) {
-            completion()
-        }
+    
+    func delay(seconds: Double) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: {
+            self.enableDisplay()
+        })
     }
-*/
+
     func readTXTIntoArray(file: String) -> [String]? {
         guard let path = Bundle.main.path(forResource: fileName, ofType: "txt") else {
             return nil
@@ -101,7 +93,7 @@ class InterfaceController: WKInterfaceController {
 
     func assignLables(txtData: [String]?) {
         // CSV-TXT Column Data
-        let nameCol = 0, roomCol = 1, issueCol = 2, dataCol = 3, arrowCol = 4
+        let nameCol = 0, roomCol = 1, issueCol = 2, dataCol = 3, arrowCol = 4, delayCol = 5
 
         var index = 0
         while(index < (txtData?.count)!) {
@@ -109,37 +101,37 @@ class InterfaceController: WKInterfaceController {
             patientIssue.append((txtData?[index + issueCol])!)
             patientData.append((txtData?[index + dataCol])!)
             arrowTxt.append((txtData?[index + arrowCol])!)
+            time.append(Int((txtData?[index + delayCol])!)!)
 
             index += numCols
         }
     }
 
     func formatDisplay() {
-        NameRoom.setTextColor(UIColor.black)
-        underline.setColor(UIColor.black)
-        MedicalIssue.setTextColor(UIColor.black)
-        Data.setTextColor(UIColor.black)
-        Et.setTextColor(UIColor.black)
-        DirectionArrow.setTextColor(UIColor.black)
-
-        setFontToBold()
-    }
-
-    func setFontToBold() {
-        // Configure bold font
         let bold = NSMutableAttributedString(string: "Arial Bold (Code)")
         if let arialBoldFont = UIFont(name: "Arial-Bold", size: 35) {
             bold.addAttribute(NSAttributedStringKey.font,value: arialBoldFont, range: NSMakeRange(0, 21))
         }
-
-        // Add bold font to labels
+        
+        NameRoom.setTextColor(UIColor.black)
+        
+        underline.setColor(UIColor.black)
+        
+        MedicalIssue.setTextColor(UIColor.black)
         MedicalIssue.setAttributedText(bold)
-        Et.setAttributedText(bold)
+        
+        Data.setTextColor(UIColor.black)
         Data.setAttributedText(bold)
+        
+        Et.setTextColor(UIColor.black)
+        Et.setAttributedText(bold)
+        
+        DirectionArrow.setTextColor(UIColor.black)
         DirectionArrow.setAttributedText(bold)
     }
 
-    @objc func enableDisplay() {
+
+    func enableDisplay() {
         var NBPData = [String](), SpO2Data = [String](), CO2Data = [String]()
         var color = UIColor()
 
@@ -160,7 +152,6 @@ class InterfaceController: WKInterfaceController {
 
         displayInterface(interfaceColor: color)
 
-        i += 1
         checkIterator()
     }
 
@@ -199,22 +190,25 @@ class InterfaceController: WKInterfaceController {
             case "21CA":
                 WKInterfaceDevice.current().play(.notification)
             default:
-                // FIXME: DONT FORGET TO CHANGE
-                print("Error in arrowTXT")
+                print(arrowTxt[i])
         }
     }
 
     func checkIterator() {
+        // Update iterator
+        i += 1
+        
         if(i >= rows) {
-            // Stop timer
-            timer.invalidate()
-            
             // Black out screen
             formatDisplay()
             
             // Change Interface
             let rootControllerIdentifier = "StartView"
             WKInterfaceController.reloadRootControllers(withNamesAndContexts: [(name: rootControllerIdentifier, context: [:] as AnyObject)])
+        } else {
+            // Asynchronously show display
+            let duration = Double(time[i]) - Double(time[i - 1])
+            delay(seconds: duration)
         }
     }
 
