@@ -31,7 +31,7 @@ class InterfaceController: WKInterfaceController {
     var time = [Int]()
     var rows = Int()
     var i = 0
-    
+
     override func awake(withContext context: Any?) {
         // Configure interface objects here.
         super.awake(withContext: context)
@@ -48,7 +48,8 @@ class InterfaceController: WKInterfaceController {
             case "File 3":
                 fileName = "patients3"
             default:
-                print(fileName)
+                fileName = "patients1"
+                NSLog(fileRecieve)
         }
 
         // Read txt file and store its data
@@ -56,11 +57,11 @@ class InterfaceController: WKInterfaceController {
 
         // Assign Labels proper data
         assignLables(txtData: data)
-        
+
         // Asynchronously show display
         delay(seconds: Double(i))
     }
-    
+
     func delay(seconds: Double) {
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: {
             self.enableDisplay()
@@ -68,21 +69,20 @@ class InterfaceController: WKInterfaceController {
     }
 
     func readTXTIntoArray(file: String) -> [String]? {
+        // Find file in directory
         guard let path = Bundle.main.path(forResource: fileName, ofType: "txt") else {
             return nil
         }
         do {
+            // Grab all data from txt file
             let content = try String(contentsOfFile:path, encoding: String.Encoding.utf8)
 
             // Filter array
             var contentsFiltered = content.components(separatedBy: ["\n", ",", "\t", "\r"])
             contentsFiltered = contentsFiltered.filter({$0 != ""})
+            for _ in 0..<numCols  { contentsFiltered.removeFirst() }
 
-            for _ in 0..<numCols  {
-                contentsFiltered.removeFirst()
-            }
-
-            // Calculate rows
+            // Calculate number of rows
             rows = contentsFiltered.count / numCols
 
             return contentsFiltered
@@ -95,6 +95,7 @@ class InterfaceController: WKInterfaceController {
         // CSV-TXT Column Data
         let nameCol = 0, roomCol = 1, issueCol = 2, dataCol = 3, arrowCol = 4, delayCol = 5
 
+        // Store data in arrays
         var index = 0
         while(index < (txtData?.count)!) {
             patientNameRoom.append((txtData?[index + nameCol])! + " - " + (txtData?[index + roomCol])!)
@@ -112,24 +113,23 @@ class InterfaceController: WKInterfaceController {
         if let arialBoldFont = UIFont(name: "Arial-Bold", size: 35) {
             bold.addAttribute(NSAttributedStringKey.font,value: arialBoldFont, range: NSMakeRange(0, 21))
         }
-        
+
         NameRoom.setTextColor(UIColor.black)
-        
+
         underline.setColor(UIColor.black)
-        
+
         MedicalIssue.setTextColor(UIColor.black)
         MedicalIssue.setAttributedText(bold)
-        
+
         Data.setTextColor(UIColor.black)
         Data.setAttributedText(bold)
-        
+
         Et.setTextColor(UIColor.black)
         Et.setAttributedText(bold)
-        
+
         DirectionArrow.setTextColor(UIColor.black)
         DirectionArrow.setAttributedText(bold)
     }
-
 
     func enableDisplay() {
         var NBPData = [String](), SpO2Data = [String](), CO2Data = [String]()
@@ -197,12 +197,12 @@ class InterfaceController: WKInterfaceController {
     func checkIterator() {
         // Update iterator
         i += 1
-        
+
         if(i >= rows) {
             // Black out screen
             formatDisplay()
-            
-            // Change Interface
+
+            // Change to Start Interface
             let rootControllerIdentifier = "StartView"
             WKInterfaceController.reloadRootControllers(withNamesAndContexts: [(name: rootControllerIdentifier, context: [:] as AnyObject)])
         } else {
